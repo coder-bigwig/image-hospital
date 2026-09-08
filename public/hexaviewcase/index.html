@@ -1,0 +1,200 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, width=device-width, initial-scale=1.0">
+	<meta id="i18n_index" content="index">
+	<title>Hexalotus</title>
+	<link rel="icon" href="images/favicon.png?v=1.02" type="image/png">
+	
+	<script>
+		document.write("<script src='./login/js/global.js?v="+Date.now()+"'><\/script>");
+	</script>
+	
+	<script src="js/jquery/jquery-1.12.1.min.js"></script>
+	<script src="js/md5.js"></script>
+	<script src="js/jquery.i18n.properties.js?v=1.01"></script>
+	<script src="js/localforage.min.js?v=1.01"></script>
+	<script src="js/layer/layer.js?v=1.01"></script>
+
+	<script type="text/javascript">
+		document.write("<link href='css/myGlobal.css?gv=" + VERSION + "' rel='stylesheet' type='text/css'>");
+		document.write("<link href='login/css/myLogin.css?gv=" + VERSION + "' rel='stylesheet' type='text/css'>");
+		document.write("<link href='css/myMsgDialog.css?gv=" + VERSION + "' rel='stylesheet' type='text/css'>");
+
+		document.write("<script src='TriTreeViewer/gFunctions.js?gv=" + VERSION + "'><\/script>");
+		document.write("<script src='TriTreeViewer/wxApi.js?gv=" + VERSION + "'><\/script>");
+		document.write("<script src='TriTreeViewer/myStorage.js?gv=" + VERSION + "'><\/script>");
+		document.write("<script src='TriTreeViewer/appFileList.js?gv=" + VERSION + "'><\/script>");
+		document.write("<script src='TriTreeViewer/language.js?gv="+VERSION+"'><\/script>");
+		document.write("<script src='TriTreeViewer/myMsgDialog.js?gv=" + VERSION + "'><\/script>");
+		document.write("<script src='TriTreeViewer/network.js?gv="+VERSION+"'><\/script>");
+		document.write("<script src='login/js/login.js?gv=" + VERSION + "'><\/script>");
+	</script>
+
+</head>
+
+<body class="index_body">
+	<div id="container" class="index" style="display:none">
+		<div id="index_bgDiv" class="top">
+			<div class="tab">
+				<span id="tabLoginBtn" class="loginBtn bigFont i18n" name="index_text1">登录</span><span id="tabRegisterBtn" class="registerBtn i18n" name="index_text2">注册</span>
+			</div>
+			<div id="emptyBox" class="emptyBox borderTopLeftRadius"></div>
+			<div class="wrapLogo"><img class="logo" src="images/icon/index_logo.png"></div>
+		</div>
+		
+		<div class="bottom">
+			<!-- 登录 -->
+			<form id="loginContent" class="content loginContent" autocomplete="off">
+				<div class="main">
+					<div class="wrapPhone">
+						<input class="i18n-input" selectname="index_text3" id="accountInput" type="tel"  placeholder="手机号" maxlength="20" >
+					</div>
+					<div class="login_wrapPass"><input id="passwordInput" class="i18n-input" type="password" selectname="index_text4" placeholder="密码" maxlength="20" ></div>
+					<div id="login_tips" class="tips"></div>
+					
+					<div class="wrapLoginBtn">
+						<button type="button" id="loginBtn" class="submit usable i18n" name="index_text5">登录</button>
+					</div>
+
+					<!-- <div class="terms">
+						<div class="text i18n" name="index_text6">登录即代表您已同意并接受</div>
+						<div id="linkProtocol" class="linkProtocol i18n" name="index_text7">《用户协议和隐私政策》</div>
+					</div> -->
+					<div class="clause">
+						<div class="myCheckBox">
+							<input id="login_agreeClause" class="clauseCheckbox" type="checkbox">
+							<label for="login_agreeClause"></label>
+						</div>
+						<label for="login_agreeClause" class="i18n" name="index_text13">我已阅读并同意</label><span class="linkProtocol i18n" name="index_text14">《用户协议和隐私政策》</span>
+					</div>
+				</div>
+			</form>
+
+			<!-- 注册 -->
+			<form id="registerContent" class="content registerContent" style="display: none;" autocomplete="off">
+				
+					<div class="wrapPhone">
+						<div class="areaCode"><input id="r_areaCodeInput" type="text" value="+86" maxlength="5" ><span class="vLine"></span></div>
+						<div class="phoneNum"><input id="r_phone" class="i18n-input" selectname="index_text8" type="tel" maxlength="20" placeholder="手机号" ></div>
+					</div>
+					
+					<div class="wrapSmsCode"><input id="r_smsCode" class="smsCode i18n-input" selectname="index_text10" type="tel" maxlength="6"  placeholder="验证码" >
+						<div class="getSmsCode">
+							<span class="vLine"></span>
+							<button type="button" id="getSmsCode" class="text i18n" name="index_text11">获取验证码</button>
+						</div>
+					</div>
+
+					<div class="wrapPass"><input id="r_pass" class="i18n-input" selectname="index_text9" type="password" maxlength="20" placeholder="密码" ></div>
+
+					<div class="wrapPass"><input id="r_certCode" class="i18n-input" selectname="index_text24" type="tel" maxlength="6" placeholder="专业认证码（选填）" ></div>
+
+					<div id="tips" class="tips"></div>
+					
+					<div class="clause">
+						<div class="myCheckBox">
+							<input id="checkClause" class="clauseCheckbox" type="checkbox">
+							<label for="checkClause"></label>
+						</div>
+						<label for="checkClause" class="i18n" name="index_text13">我已阅读并同意</label><span class="linkProtocol i18n" name="index_text14">《用户协议和隐私政策》</span>
+					</div>
+
+					<div class="wrapRegisterBtn">
+						<button type="button" id="registerSubmitBtn" class="register i18n" name="index_text12">注册</button>
+					</div>
+			</form>
+
+			<div id="login_bottom" class="wrapResetPassBtn">
+				<span id="resetPassBtn" class="resetPassBtn i18n" name="index_text15">忘记密码</span>
+			</div>
+		</div>
+
+
+		<div id="maskIndex" class="mask">
+		</div>
+
+		<!-- 用户协议和隐私政策 -->
+		<div id="privacyProtocol" class="privacyProtocol">
+			<div class="text">
+				<p align="center" class="title i18n" name="index_text16">用户协议和隐私政策</p>
+				<pre id="protocolContent" class="content"></pre>
+			</div>
+			<div class="protocolBtn">
+				<table class="btnTable">
+					<tr>
+						<td id="refuseBtnTd"><div id="refuseBtn" class="refuse privacyBtn i18n" name="index_text17">拒绝</div></td>
+						<td id="agreeBtnTd"><div id="agreeBtn" class="agree privacyBtn i18n" name="index_text18">同意</div></td>
+						<td id="ensureBtnTd"><div id="ensureBtn" class="ensure privacyBtn i18n" name="index_text19">确定</div></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+		<!-- 加载动画 -->
+		<div id="waitBack" class="waitBack">
+			<table class="waitImgTable">
+				<tr>
+					<td>
+						<div class="loadContent">
+							<div class="loadColumn">
+								<div class="loadContainer animation-2">
+									<div class="shape shape1"></div>
+									<div class="shape shape2"></div>
+									<div class="shape shape3"></div>
+									<div class="shape shape4"></div>
+								</div>
+							</div>
+
+						</div>
+						<div id="loadText"></div>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<!-- 更新提示框 -->
+		<div id="updateApp" class="updateApp">
+			<div class="dialog">
+				<div class="text">
+					<p align="center" class="title i18n" name="index_text20">应用更新</p>
+					<pre id="updateContent" class="content"></pre>
+				</div>
+				<div class="protocolBtn">
+					<button id="updateBtn" class="updateBtn i18n" name="index_text21">立即更新</button>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<script>
+		;(function(){
+			// 预加载图像
+			var imgArr = [
+				'images/picture/logo_offline.png',
+				'images/picture/logo_poorNeteork.png',
+				'images/picture/logo.png',
+				'./login/images/login_bg.png?v=1.0',
+				'./login/images/register_bg.png?v=1.1',
+				'./login/images/resetPass_bg.png',
+				'./images/icon/index_warn.png',
+				'./images/icon/index_ok.png',
+				'./js/layer/theme/default/icon.png',
+				'./js/layer/theme/default/loading-1.gif'
+			];
+			cacheImg(imgArr);
+
+			// 解决从重置密码页回到登录页闪一下
+			var fromPage = sessionStorage.getItem(getWebPrefix()+"_fromPge");
+			sessionStorage.removeItem(getWebPrefix()+"_fromPge");
+			if(fromPage == "resetPass"){
+				var fromPageDom = document.getElementById("container");
+				fromPageDom.style.display = "block";
+			}
+
+		})();
+		
+	</script>
+</body>
+</html>

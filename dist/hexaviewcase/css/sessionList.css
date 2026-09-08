@@ -1,0 +1,153 @@
+/*会话列表*/
+.mySessionList {
+    width:100%;
+    overflow-y:auto;
+    background-color: #EDEDED;
+}
+/*会话列表表格*/
+.listSession{
+    width:100%;
+    border-collapse: collapse;
+    table-layout:fixed;
+    word-break:break-all;
+}
+
+.listSession tr{
+    background-color: #FFFFFF;
+    height: 66px;
+}
+.listSession tr:active{
+    -webkit-transition-duration: 0s;
+    -moz-transition-duration: 0s;
+    transition-duration: 0ms;
+    background-color: #D8D8D8;
+}
+
+.listSession .stickSessionTr {
+    background-color: #e1e1e1;
+}
+
+.listSession td:nth-of-type(1){
+    width: 80px;
+    text-align: center;
+}
+.listSession td:nth-of-type(1) img:first-child {
+    height: 50px;
+    width: 50px;
+    vertical-align: middle;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.listSession td:nth-of-type(2){
+    border-bottom: 0.5px solid #EDEDED;
+    line-height: 24px;
+}
+.listSession tr:nth-last-of-type(1) td {
+    border: none;
+}
+.listSession td:nth-of-type(2) .listSessionName{
+    width: 80%;
+    color: #333;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.listSession td:nth-of-type(2) .listSessionMsg{
+    color: #9c9c9c;
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.listSession td:nth-of-type(3){
+    border-bottom:0.5px solid #EDEDED;
+    line-height: 20px;
+    width: 60px;
+    position: relative;
+}
+.listSession td:nth-of-type(3) .listSessionTime{
+    position: absolute;
+    top: 12.5px;
+    right: 0;
+    width: 60px;
+    font-size: 12px;
+    color: #B3B3B3;
+    text-align: center;
+}
+
+/*好友请求列表*/
+.listSession .recentAdd td{
+    height: 20px;
+    background-color: #EDEDED;
+    font-size: 12px;
+}
+
+.listSession .alertRight {
+    position: absolute;
+    color: white;
+    font-size: 12px;
+    background-color: red;
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    right: -4.5px;
+    top: -4.5px;
+    text-align: center;
+    border-radius: 50%;
+}
+.listSession .alertRightOver {
+    position: absolute;
+    color: white;
+    font-size: 12px;
+    background-color: red;
+    width: 22px;
+    height: 17px;
+    line-height: 17px;
+    left: 80%;
+    top: -8px;
+    text-align: center;
+    border-radius: 17px;
+}
+
+.listSession .headImgFrame {
+    height: 50px;
+    width: 50px;
+    position: relative;
+    display: inline-block;
+}
+.listSession .certificateIcon {
+    position: absolute;
+    height: 18px;
+    right: 0px;
+    bottom: 0px;
+    pointer-events: none;
+}
+
+
+
+
+
+
+/*长按--弹出框*/
+.sessionList_dropdown {
+    background-color: #fbfbfb;
+    color: #000;
+    font-size: 14px;
+    border-radius: 4px;
+    box-shadow: 0px 0px 4px #888888;
+}
+
+.sessionList_dropdown li{
+    list-style-type: none;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    padding: 10px 10px;
+}
+.sessionList_dropdown li:active{
+    background-color: #cecece;
+}
+
+

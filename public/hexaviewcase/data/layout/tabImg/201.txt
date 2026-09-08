@@ -1,0 +1,7 @@
+<div id="Layout_201" class="totalPage">  <!--show origna image (axial) -->
+	<div name="barMenu" > </div>
+	<div name="barImage" > </div>
+	<div id="imgContent" class="imgContent">
+		<div name="axialViewCon" > </div> 
+	</div>
+</div>

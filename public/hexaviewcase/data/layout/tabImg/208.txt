@@ -1,0 +1,8 @@
+<div id="Layout_208" class="totalPage">   <!--show 2D image sagittal + object tree-->
+	<div name="barMenu" > </div>
+	<div name="barImage" > </div>
+	<div id="imgContent" class="imgContent">
+		<div name="sagittalViewCon" > </div>
+		<div name="volumeTree"> </div>
+	</div>
+</div>

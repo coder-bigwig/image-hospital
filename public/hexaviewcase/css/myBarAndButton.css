@@ -1,0 +1,2063 @@
+/*顶部Tab页签栏*/
+.myMenuBar {
+	background: #2c2c3b;
+	height:40px;
+	padding: 0 0 0 4px;
+	display: flex;
+	align-items: center;
+	color: #CCCCCC;
+	font-size: 18px;
+}
+.myMenuBar .wrapLogo{
+	margin-left: 2px;
+}
+.myMenuBar .wrapTabs {
+	flex-grow: 1;
+	display: flex;
+	justify-content: flex-end;
+}
+.myMenuBar .logoImg{
+	height: 26px;
+	pointer-events: none;
+	vertical-align: middle;
+}
+.myMenuBar .myMenuBarButton {
+	position: relative;
+	
+	height: 32px;
+	min-width: 60px;
+	padding-left: 4px;
+	padding-right: 4px;
+	text-align: center;
+	line-height: 32px;
+	box-sizing: border-box;
+}
+.myMenuBar .checked{
+	/*background: linear-gradient(rgb(10, 170, 226), rgb(59, 179, 194));*/
+	background-color: #16B6FF;
+	color: #FFF;
+	font-weight: bold;
+	border-radius: 4px;
+}
+.myMenuBar .enCss{
+	font-size: 14px;
+	width: auto;
+	padding: 0 4px;
+}
+
+.chatTabHaveMsg {
+	display: none;
+	position: absolute;
+	top: 8px;
+	right: 2px;
+	height: 6px;
+	width: 6px;
+	background: #ff3366;
+	border-radius: 50%;
+	/*opacity: 0.8;*/
+}
+
+
+/*--- 主页第二行菜单栏 --*/
+.mySecondBarOne {
+	height:50px;
+	text-align: center;
+	background-color: #43465B;
+	color: #FFF;
+}
+.modelBar{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+.caseBar{
+	
+}
+.mySecondBarOne .inMySecondBarOne{
+	width: 100%;
+	max-width: 500px;
+	display: flex;
+	justify-content: space-between;
+	padding-left: 12px;
+	padding-right: 12px;
+	box-sizing: border-box;
+}
+.mySecondBarOne .toggle2D3D {
+	width: 80px;
+	height: 36px;
+	margin-top: 7px;
+	background-color: inherit;
+}
+.mySecondBarOne .toggle2D3D .twoD,
+.mySecondBarOne .toggle2D3D .threeD {
+	width: 40px;
+	height: 36px;
+	background-color: #2E2F34;
+	color: #fff;
+	font-size: 16px;
+	text-align: center;
+	line-height: 36px;
+	float: left;
+	box-sizing: border-box;
+}
+.mySecondBarOne .toggle2D3D .twoD {
+	border-top-left-radius: 18px;
+	border-bottom-left-radius: 18px;
+}
+.mySecondBarOne .toggle2D3D .threeD {
+	border-top-right-radius: 18px;
+	border-bottom-right-radius: 18px;
+}
+.mySecondBarOne .toggle2D3D .checked {
+	background-color: #0aaae2;
+}
+/*案例页的切换分组模块*/
+.mySecondBarOne .selectModel {
+	position: relative;
+	display: inline-block;
+	padding-left: 8px;
+	font-size: 14px;
+	margin-top: 12px;
+	text-align: left;
+	color: #fff;
+	background-color: #2c2c3b;
+}
+.mySecondBarOne .selectModel .selectModelBtn{
+	height: 30px;
+	line-height: 30px;
+	min-width: 110px;
+	max-width: 164px;
+	padding-right: 26px;
+	white-space: nowrap;
+	overflow-x: hidden;
+	text-overflow: ellipsis;
+	box-sizing: border-box;
+}
+.mySecondBarOne .selectModel .dropDown{
+	position: absolute;
+	width: 100%;
+	top: 26px;
+	left: 0;
+	display: none;
+	z-index: 2;
+	/*max-height:400px;
+	overflow-y: auto;*/
+	background-color: inherit;
+}
+
+.mySecondBarOne .selectModel .dropDown .opt{
+	height: 40px;
+	line-height: 40px;
+	padding: 0 8px;
+	box-sizing: border-box;
+	width: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+#modelGroupMyPatient {
+	background-color: inherit;
+}
+#imageGroupMyPatient {
+	background-color: inherit;
+}
+
+.mySecondBarOne .selectModel .modelGroupDropDown,
+.mySecondBarOne .selectModel .imageGroupDropDown{
+	position: absolute;
+	/*bottom: 0;*/
+	right: 100%;
+	width: 100%;
+	display: none;
+	background-color: inherit;
+}
+
+.mySecondBarOne .selectModel .dropDown .opt:active{
+	background-color: #16aee2;
+	color: #fff;
+}
+.mySecondBarOne .selectModel .dropDown .opt[dropDown]:active{
+	background-color: rgba(13,171,225,0.5);
+}
+.mySecondBarOne .selectModel .dropDown .checked {
+	background-color: #0DABE1;
+	color: #fff;
+}
+.mySecondBarOne .selectModel .dropDown .checked2 {
+	background-color: rgba(13,171,225,0.5);
+	color: #fff;
+}
+.mySecondBarOne .triangle{
+	display: inline-block;
+	position: absolute;
+	right: 5.5px;
+	top: 5.5px;
+	height: 15px;
+	width: 15px;
+	background-image:url(images/picture/triangleDown.png);
+	background-size: 100%;
+	pointer-events: none;
+}
+.mySecondBarOne select {
+	margin-top:12.5px;
+	padding-left: 5px;
+	border-radius: 10px;
+	border: none;
+	outline: none;
+	height:25px;
+	background-color:#2b303b;
+	color: #E6E6E6;
+	width: 100%;
+	box-sizing: border-box;
+}
+.mySecondBarOne .model_3DGroup {
+	height: 100%;
+	width: 100%;
+	position: relative;
+	font-size: 14px;
+	border-bottom: 1px solid #C7C7CC;
+	box-sizing: border-box;
+}
+.mySecondBarOne .model_3DGroup .wrap_list{
+	display: flex;
+	height: 100%;
+	width: 100%;
+}
+.mySecondBarOne .model_3DGroup .wrap_list > .gap{
+	width: 10px;
+	height: 100%;
+}
+.mySecondBarOne .model_3DGroup .list {
+	display: flex;
+	width: calc(100% - 20px);
+	height: 100%;
+	overflow-x: auto;
+}
+.mySecondBarOne .model_3DGroup .list .item{
+	display: inline-flex;
+	height: 100%;
+	align-items: center;
+	flex-shrink: 0;
+	margin-left: 15px;
+}
+.mySecondBarOne .model_3DGroup .list .item.checked {
+	color: #1585FF;
+	position: relative;
+}
+.mySecondBarOne .model_3DGroup .list .item.checked:after{
+	content: "";
+	position: absolute;
+	width: calc(100% - 20px);
+	height: 2px;
+	background-color: #1585FF;
+	bottom: 5px;
+	left: 10px;
+}
+.mySecondBarOne .model_3DGroup .list .item:first-child  {
+	margin-left: 0;
+}
+.mySecondBarOne .leftFade {
+	position: absolute;
+	width: 56px;
+	height: 100%;
+	left: 0px;
+	top: 0;
+	background: linear-gradient(to right, rgba(67, 70, 91, 1) 0%, rgb(67, 70, 91, 0) 100%);
+}
+.mySecondBarOne .rightFade {
+	position: absolute;
+	width: 56px;
+	height: 100%;
+	right: 0px;
+	top: 0;
+	background: linear-gradient(to right, rgba(67, 70, 91, 0) 0%, rgb(67, 70, 91, 1) 100%);
+	
+}
+
+
+/*案例页--浮层引导*/
+.mySecondBarOne .whiteBg,
+.mainPage .whiteBg{
+	background-color: #fff !important;
+}
+.mySecondBarOne .guideContent,
+.mainPage .guideContent{
+	position: absolute;
+	padding: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-direction: column;
+	background-color: #fff;
+	color: #000;
+	border-radius: 4px;
+	font-size: 14px;
+}
+.skipGuideBtn{
+	position: absolute;
+	bottom: 10px;
+	left: 50%;
+	transform: translate(-50%,0);
+	background-color: #fff;
+	padding: 5px 10px;
+	border-radius: 4px;
+	z-index: 8;
+}
+.mySecondBarOne .guideContent .nextBtn,
+.mainPage .guideContent .nextBtn{
+	border: 1px solid #000;
+	border-radius: 4px;
+	margin-top: 10px;
+	padding: 2px 4px;
+}
+.mySecondBarOne .guideContent:before,
+.mainPage .guideContent:before{
+	content: "";
+	position: absolute;
+	border-left: 8px solid transparent;
+	border-right: 8px solid transparent;
+}
+.mySecondBarOne .guideStep1:before{
+	border-bottom: 8px solid #fff;
+	left: 10px;
+	top: -8px;
+}
+.mySecondBarOne .guideStep1{
+	width: 200px;
+	top: calc(100% + 8px);
+	left: 0;
+}
+.mySecondBarOne .guideStep2:before{
+	border-bottom: 8px solid #fff;
+	right: 10px;
+	top: -8px;
+}
+.mySecondBarOne .guideStep2{
+	width: 200px;
+	top: calc(100% + 8px);
+	right: 0;
+}
+.mainPage .guideStep3:before{
+	border-bottom: 8px solid #fff;
+	left: 10px;
+	top: -8px;
+}
+.mainPage .guideStep3{
+	width: 200px;
+	top: calc(100% + 8px);
+	left: 0;
+}
+.mainPage .guideStep4:before{
+	border-bottom: 8px solid #fff;
+	left: 70px;
+	top: -8px;
+}
+.mainPage .guideStep4{
+	width: 200px;
+	top: calc(100% + 8px);
+	left: -60px;
+}
+.mainPage .guideStep5:before{
+	border-bottom: 8px solid #fff;
+	left: 70px;
+	top: -8px;
+}
+.mainPage .guideStep5{
+	width: 200px;
+	top: calc(100% + 8px);
+	left: -60px;
+}
+.mainPage .guideStep6:before,
+.mainPage .guideStep11:before{
+	border-bottom: 8px solid #fff;
+	right: 10px;
+	top: -8px;
+}
+.mainPage .guideStep6,
+.mainPage .guideStep11{
+	width: 200px;
+	top: calc(100% + 8px);
+	right: 0;
+}
+.mainPage .guideStep7:before{
+	border-bottom: 8px solid #fff;
+	right: 10px;
+	top: -8px;
+}
+.mainPage .guideStep7{
+	width: 200px;
+	top: calc(100% + 8px);
+	right: 0;
+}
+.mainPage .guideStep8:before{
+	border-bottom: 8px solid #fff;
+	left: 10px;
+	top: -8px;
+}
+.mainPage .guideStep8{
+	width: 200px;
+	top: calc(100% + 8px);
+	left: 0;
+}
+.mainPage .guideStep9:before{
+	border-bottom: 8px solid #fff;
+	left: 70px;
+	top: -8px;
+}
+.mainPage .guideStep9{
+	width: 200px;
+	top: calc(100% + 8px);
+	left: -60px;
+}
+.mainPage .guideStep10:before{
+	border-top: 8px solid #fff;
+	right: 10px;
+	bottom: -8px;
+}
+.mainPage .guideStep10{
+	width: 200px;
+	bottom: calc(100% + 8px);
+	right: 0;
+}
+
+
+
+/*模型页引导*/
+.model_guideContent {
+	position: absolute;
+	padding: 8px 5px 4px 8px;
+	display: flex;
+	/*align-items: center;*/
+	justify-content: space-between;
+	flex-direction: column;
+	background-color: #fff;
+	color: #000;
+	border-radius: 6px;
+	font-size: 14px;
+	text-align: left;
+	box-sizing: border-box;
+	width: calc(100% - 24px);
+	top: calc(100% + 8px);
+	right: 12px;
+	z-index: 1;
+}
+.model_guideContent .nextBtn{
+	border: 1px solid #1585FF;
+	border-radius: 6px;
+	margin-top: 7px;
+	padding: 4px 10px;
+	color: #1585FF;
+	align-self: flex-end;
+	font-size: 12px;
+	background-color: transparent;
+}
+.model_skipGuideBtn {
+	position: absolute;
+	bottom: 30px;
+	left: 50%;
+	transform: translate(-50%,0);
+	background-color: #fff;
+	padding: 8px 30px;
+	border-radius: 6px;
+	z-index: 8;
+	color: #000;
+}
+.guide_triangle {
+	position: relative;
+}
+.guide_triangle:after {
+	content: "";
+    position: absolute;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid #fff;
+    left: 50%;
+    bottom: -11px;
+    transform: translateX(-50%);
+}
+
+
+
+.mySigleButton {
+	width: 45px;
+	height: 26px;
+	text-align: center;
+	line-height: 26px;
+	background-color: #038fbf;
+	border-radius: 8px;
+	
+	border: none;
+	margin-top: 12px;
+	font-size:14px;
+	color: #e6e6e6;
+	outline: none;
+	margin-left: 12px;
+}
+
+.switchListBtn {
+	display: inline-block;
+	margin-top: 5px;
+	width:82px;
+	height:40px;
+	text-align: center;
+	border-radius: 18px;
+}
+.switchListBtn img {
+	margin-top: 3px;
+	height: 34px;
+	pointer-events: none;
+}
+
+.myImg2dListButton {
+	display: inline-block;
+	margin-top: 7px;
+	width:70px;
+	height:36px;
+	color:#CCCCCC;
+	font-size: 8px;
+	background-color: #2E2F34;
+	text-align: center;
+	/*border-top-left-radius: 18px;
+	border-bottom-left-radius: 18px;*/
+	border-radius: 18px;
+}
+.myImg2dListButton img{
+	margin-top: 3px;
+	margin-left: 5px;
+	width: 60px;
+	height: 30px;
+	pointer-events: none;
+}
+.myImg2dListButton .myListButtonText {
+	padding-left: 10px;
+}
+
+.myCaseListButton {
+	display: inline-block;
+	margin-top: 7px;
+	width:35px;
+	height:36px;
+	color:#CCCCCC;
+	font-size: 8px;
+	background-color: #2E2F34;
+	text-align: center;
+	border-top-right-radius: 18px;
+	border-bottom-right-radius: 18px;
+}
+.myCaseListButton img{
+	padding-top: 7px;
+	padding-right: 10px;
+	height: 15px;
+	pointer-events: none;
+}
+.myCaseListButton .myListButtonText {
+	padding-right: 10px;
+}
+
+.myScanButton {
+	display: inline-block;
+	margin-top: 8px;
+	margin-left: 4px;
+	width:30px;
+	height:30px;
+	background-color: #2E2F34;
+	
+}
+.myScanButton:active{
+	background-color: #e69138;
+}
+
+.myScanButtonImg{
+	padding: 7px 5px 3px 5px;
+	height: 20px;
+	pointer-events: none;
+}
+
+/*---TabChat、TabMyself---*/
+.mySecondBarTwo {
+	background-color: #F4F4F4;
+	height:40px;
+	width:100%;
+	color:black;
+	border-bottom: 1px solid #E6E6E6;
+	box-sizing: border-box;
+}
+
+.mySecondBarTwo .chatTopBackIcon {
+	height:30px;
+	pointer-events: none;
+	margin-top: 5px;
+	margin-left: 5px;
+}
+
+.mySecondBarTwo .chatTopLeftDiv {
+	width: 40px;
+	height: 40px;
+}
+.mySecondBarTwo .chatTopLeftDiv:active{
+	background-color: #ccc;
+}
+/*标题*/
+.mySecondBarTwo .wrapSpan{
+	height:40px;
+	width: calc(100% - 80px);
+	padding: 0 10px;
+	line-height: 40px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	box-sizing: border-box;
+}
+/*点*/
+.mySecondBarTwo .dot {
+	width: 40px;
+	height: 40px;
+	text-align: center;
+}
+.mySecondBarTwo .dot img {
+	height: 20px;
+	vertical-align: middle;
+	margin-top: 10px;
+}
+.mySecondBarTwo .dot:active {
+	background-color: #ccc;
+}
+/*确定按钮*/
+.mySecondBarTwo .chatTopRightBtn{
+	display: inline-block;
+	height: 28px;
+	padding: 1px 8px;
+	color:#FBFFFA; 
+	background-color:#0dC46A;
+	text-align: center;
+	line-height: 28px;
+	margin-top:5px;
+	margin-right:5px;
+	border-radius: 5px;
+	vertical-align: middle;
+	font-size: 14px;
+}
+.mySecondBarTwo .chatTopRightBtn:active{
+	background-color: #22AA22;
+}
+.mySecondBarTwo .tc{
+	text-align: center;
+}
+
+/*交流页--顶部搜索*/
+.chatTopSearch {
+	height: 40px;
+	background-color: #F4F4F4;
+	font-size: 14px;
+	position: relative;
+}
+.chatTopSearch .one {
+	display: flex;
+	height: 100%;
+	align-items: center;
+	justify-content: center;
+}
+.chatTopSearch .one .cell1 {
+	position: relative;
+}
+.chatTopSearch .one .search {
+	width: 298px;
+	height: 28px;
+	padding: 0px 8px;
+	background-color: #FFF;
+	border-radius: 8px;
+}
+.chatTopSearch .one .placeholder {
+	position: absolute;
+	height: 24px;
+	display: flex;
+	align-items: center;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	color: #979797;
+	font-size: 12px;
+}
+.chatTopSearch .one .placeholder .icon {
+	height: 12px;
+	margin-right: 4px;
+}
+.chatTopSearch .one .cancelBtn {
+	margin-left: 5px;
+}
+.chatTopSearch .one .cancelBtn button{
+	height: 28px;
+	line-height: 28px;
+	padding: 0 8px;
+	background-color: #038fbf;
+	color: #FFF;
+	border-radius: 5px;
+}
+/*搜索结果模块*/
+.chatTopSearch .two {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 100%;
+	z-index: 1;
+	background-color: #FFF;
+	overflow-y: auto;
+}
+.chatTopSearch .two .item {
+
+}
+.chatTopSearch .two .item .title {
+	background-color: #EEE;
+	padding: 4px;
+}
+.chatTopSearch .two .container {
+	min-height: 40px;
+}
+/*搜索--好友列表*/
+.chat_searchFriend tr {
+	
+}
+
+/*搜索--会话列表*/
+.chat_searchSession tr {
+	
+}
+
+/*搜索--群聊列表*/
+.chat_searchGroup{
+    width:100%;
+    border-collapse: collapse;
+    border-bottom: 1px solid #EDEDED;
+    table-layout:fixed;
+    word-break:break-all;
+}
+.chat_searchGroup tr{
+    height:48px;
+    background-color: #FFFFFF;
+}
+.chat_searchGroup tr:active{
+    background-color: #D6D6D6;
+}
+.chat_searchGroup tr td:nth-of-type(1){
+    width:65px;
+    text-align: center;
+}
+.chat_searchGroup tr td:nth-of-type(1) img{
+    width:40px;
+    height:40px;
+    vertical-align: middle;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.chat_searchGroup tr td:nth-of-type(2){
+    border-bottom: 1px solid #EDEDED;
+    line-height: 48px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 10px;
+}
+.chat_searchGroup .wrapIndexTr {
+    height: 25px;
+    background-color: #EDEDED;
+    pointer-events: none;
+}
+.chat_searchGroup .wrapIndex {
+    padding-left: 12.5px;
+    font-size: 12px;
+    text-align: left;
+    color: #8F8F8F;
+}
+
+
+/*交流页--底部菜单栏*/
+.myBottomBar {
+	height:55px;
+	width:100%;
+	background-color: #2c2c3b;
+	box-shadow:0px 0px 6px 0px rgba(0,0,0,0.5);
+	display: flex;
+	justify-content: space-around;
+}
+.myBottomBar .outButton{
+	display: inline-block;
+	height: 100%;
+}
+.myBottomBar img{
+	/*width:22px;*/
+	height:22px;
+	vertical-align: middle;
+	pointer-events: none;
+}
+.myBottomBar .wrapBottomButton{
+	display:table-cell;
+	vertical-align: middle;
+	height:55px;
+	font-size: 12px;
+}
+.myBottomBar .myChatButton {
+	text-align: center;
+	position: relative;
+	color: #ededed;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.lightTheme .myBottomBar .myChatButton{
+	color: #000;
+}
+.myBottomBar .myChatButton .bgImg1,
+.myBottomBar .myChatButton .bgImg2{
+	width: 22px;
+	height: 22px;
+}
+
+/*深色主题*/
+.myBottomBar .myChatButton .bgImg1{
+	background: url(../images/icon/commu-sessionUnchecked_dark.png?v=1.0) no-repeat 1px;
+	background-size: contain;
+}
+.myBottomBar .myChatButton .bgImg2{
+	background: url(../images/icon/commu-addressBookUnchecked_dark.png?v=1.0) no-repeat center;
+	background-size: contain;
+}
+.myBottomBar .checked .bgImg1{
+	background: url(../images/icon/commu-sessionChecked.png?v=1.0) no-repeat center;
+	background-size: contain;
+}
+.myBottomBar .checked .bgImg2{
+	background: url(../images/icon/commu-addressBookChecked.png?v=1.0) no-repeat center;
+	background-size: contain;
+}
+
+/*浅色主题*/
+.lightTheme .myBottomBar .myChatButton .bgImg1{
+	background: url(../images/icon/commu-sessionUnchecked.png?v=1.0) no-repeat 1px;
+	background-size: contain;
+}
+.lightTheme .myBottomBar .myChatButton .bgImg2{
+	background: url(../images/icon/commu-addressBookUnchecked.png?v=1.0) no-repeat center;
+	background-size: contain;
+}
+.lightTheme .myBottomBar .checked .bgImg1{
+	background: url(../images/icon/commu-sessionChecked.png?v=1.0) no-repeat center;
+	background-size: contain;
+}
+.lightTheme .myBottomBar .checked .bgImg2{
+	background: url(../images/icon/commu-addressBookChecked.png?v=1.0) no-repeat center;
+	background-size: contain;
+}
+
+.myBottomBar .checked{
+	color: #0aaae2;
+}
+.lightTheme .myBottomBar .checked{
+	color: #0aaae2;
+}
+
+.myBottomBar .chatTabHaveFriendMsg{
+	display: none;
+	position: absolute;
+	top: -3px;
+	right: 1px;
+	height: 10px;
+	width: 10px;
+	background: #b70707;
+	border-radius: 50%;
+	opacity: 0.8;
+}
+
+
+/*模型页---工具栏按钮*/
+.mySecondBarOne .myToolButton {
+	display: inline-flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding-top: 2px;
+	width:44px;
+	height:44px;
+	color:#ededed;
+	font-size: 12px;
+	background-color: #2E2F34;
+	text-align: center;
+	border-radius: 5px;
+	position: relative;
+	box-sizing: border-box;
+}
+.mySecondBarOne .enCss{
+	letter-spacing: -0.6px;
+}
+.mySecondBarOne .myToolButton.checked{
+	border: 1px solid rgba(12,171,225,1);
+	color: #0DABE1;
+}
+.mySecondBarOne .myToolButton.disabled{
+	pointer-events: none !important;
+	color: #a5a5a5 !important;
+}
+
+/*模型 - 指引*/
+.lungSegement_guide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(255,255,255,0.8);
+    text-align: center;
+	z-index: 2;
+}
+.lungSegement_guide .content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.lungSegement_guide .tipImg {
+    width: 350px;
+}
+.lungSegement_guide .shutBtn {
+    background-color: transparent;
+}
+
+
+/*高级模式-- 深色主题*/
+.mySecondBarOne .myToolButton .bgImg1{
+	width: 22px;
+	height: 22px;
+	background: url("../images/icon/mo_3D_dark.png?v=1.0") no-repeat center;
+	background-size: contain;
+}
+.mySecondBarOne .myToolButton .bgImg2{
+	width: 22px;
+	height: 22px;
+	background: url("../images/icon/mo_tree_dark.png") no-repeat center;
+	background-size: contain;
+}
+.mySecondBarOne .myToolButton:active .bgImg2{
+	background: url("../images/icon/mo_tree_dark_click.png") no-repeat center;
+	background-size: contain;
+}
+.mySecondBarOne .myToolButton .bgImg3{
+	width: 22px;
+	height: 22px;
+	background: url("../images/icon/mo_screenShotDraw_dark.png") no-repeat center;
+	background-size: contain;
+}
+.mySecondBarOne .myToolButton:active .bgImg3{
+	background: url("../images/icon/mo_screenShotDraw_dark_click.png") no-repeat center;
+	background-size: contain;
+}
+.mySecondBarOne .myToolButton .bgImg4{
+	width: 22px;
+	height: 22px;
+	background: url("../images/icon/mo_windowLH_dark.png") no-repeat center;
+	background-size: contain;
+}
+.mySecondBarOne .myToolButton .bgImg5{
+	width: 22px;
+	height: 22px;
+	background: url("../images/icon/mo_measure_dark.png") no-repeat center;
+	background-size: contain;
+}
+.mySecondBarOne .myToolButton:active .bgImg5{
+	background: url("../images/icon/mo_measure_dark_click.png") no-repeat center;
+	background-size: contain;
+}
+.mySecondBarOne .myToolButton .bgImg6{
+	width: 22px;
+	height: 22px;
+	background: url("../images/icon/mo_cut_dark.png") no-repeat center;
+	background-size: contain;
+}
+.mySecondBarOne .myToolButton .bgImg7{
+	width: 22px;
+	height: 22px;
+	background: url("../images/icon/mo_more_dark.png") no-repeat center;
+	background-size: contain;
+}
+.mySecondBarOne .myToolButton .mo_3D {
+	background: url("../images/icon/mo_3D_dark.png") no-repeat center;
+	background-size: contain;
+}
+.mySecondBarOne .myToolButton .mo_2D {
+	background: url("../images/icon/mo_2D_dark.png") no-repeat center;
+	background-size: contain;
+}
+.mySecondBarOne .myToolButton .mo_layout_a3d {
+	background: url("../images/icon/mo_layout_a3d_dark.png") no-repeat center;
+	background-size: contain;
+}
+.mySecondBarOne .myToolButton .mo_layout_c {
+	background: url("../images/icon/mo_layout_c_dark.png") no-repeat center;
+	background-size: contain;
+}
+.mySecondBarOne .myToolButton .mo_layout_s {
+	background: url("../images/icon/mo_layout_s_dark.png") no-repeat center;
+	background-size: contain;
+}
+/*选中和点击效果*/
+.mySecondBarOne .haveActive:active{
+	border:1px solid #0CABE1;
+	color: #0DABE1;
+}
+.mySecondBarOne .toolBtnChecked .bgImg2{
+	background: url("../images/icon/mo_tree_dark_click.png") no-repeat center;
+	background-size: contain;
+}
+.mySecondBarOne .toolBtnChecked .bgImg4{
+	background: url("../images/icon/mo_windowLH_dark_click.png") no-repeat center;
+	background-size: contain;
+}
+.mySecondBarOne .toolBtnChecked{
+	border:1px solid #0CABE1;
+	color: #0DABE1;
+}
+
+/*简易模式--深色主题*/
+.mySecondBarOne .myToolButton .bgImg8{
+	width: 22px;
+	height: 22px;
+	background: url("../images/icon/mo_lunkuo_dark.png?v=1.0") no-repeat center;
+	background-size: contain;
+}
+.mySecondBarOne .myToolButton:active .bgImg8{
+	background: url("../images/icon/mo_lunkuo_selected_light.png?v=1.0") no-repeat center;
+	background-size: contain;
+}
+.mySecondBarOne .myToolButton .bgImg9{
+	width: 22px;
+	height: 22px;
+	background: url("../images/icon/mo_liuyu_dark.png?v=1.0") no-repeat center;
+	background-size: contain;
+}
+.mySecondBarOne .myToolButton .bgImg10{
+	width: 22px;
+	height: 22px;
+	background: url("../images/icon/mo_plan_dark.png?v=1.0") no-repeat center;
+	background-size: contain;
+}
+.mySecondBarOne .myToolButton:active .bgImg10{
+	background: url("../images/icon/mo_plan_selected_light.png?v=1.0") no-repeat center;
+	background-size: contain;
+}
+.mySecondBarOne .myToolButton .bgImg11{
+	width: 22px;
+	height: 22px;
+	background: url("../images/icon/measure_volume_dark.png?v=1.0") no-repeat center;
+	background-size: contain;
+}
+.mySecondBarOne .myToolButton:active .bgImg11{
+	background: url("../images/icon/measure_volume_selected_light.png?v=1.0") no-repeat center;
+	background-size: contain;
+}
+.mySecondBarOne .myToolButton .bgImg12{
+	width: 22px;
+	height: 22px;
+	background: url("../images/icon/liverCut_riskAssessment_dark.png?v=1.0") no-repeat center;
+	background-size: contain;
+}
+.mySecondBarOne .myToolButton:active .bgImg12{
+	background: url("../images/icon/liverCut_riskAssessment_selected_light.png?v=1.0") no-repeat center;
+	background-size: contain;
+}
+
+/*
+	2021-04-02
+	新的模型工具栏按钮
+*/
+.mySecondBarOne .myToolButton .bgImg13{
+	width: 22px;
+	height: 22px;
+	background: url("../images/icon/mo_reset.png?v=1.0") no-repeat center;
+	background-size: contain;
+}
+.mySecondBarOne .myToolButton:active .bgImg13{
+	background: url("../images/icon/mo_reset_active.png?v=1.0") no-repeat center;
+	background-size: contain;
+}
+.mySecondBarOne .myToolButton .bgImg14{
+	width: 22px;
+	height: 22px;
+	background: url("../images/icon/mo_segment2.png?v=1.0") no-repeat center;
+	background-size: contain;
+}
+.mySecondBarOne .myToolButton:active .bgImg14{
+	background: url("../images/icon/mo_segment2_active.png?v=1.0") no-repeat center;
+	background-size: contain;
+}
+.mySecondBarOne .myToolButton .bgImg15{
+	 width: 22px;
+	 height: 22px;
+	 background: url("../images/icon/mo_plan2.png?v=1.0") no-repeat center;
+	 background-size: contain;
+ }
+.mySecondBarOne .myToolButton:active .bgImg15{
+	background: url("../images/icon/mo_plan2_active.png?v=1.0") no-repeat center;
+	background-size: contain;
+}
+.mySecondBarOne .myToolButton .bgImg16{
+	width: 22px;
+	height: 22px;
+	background: url("../images/icon/mo_mark2.png?v=1.0") no-repeat center;
+	background-size: contain;
+}
+.mySecondBarOne .myToolButton:active .bgImg16{
+	background: url("../images/icon/mo_mark2_active.png?v=1.0") no-repeat center;
+	background-size: contain;
+}
+.mySecondBarOne .myToolButton .bgImg17{
+	width: 22px;
+	height: 22px;
+	background: url("../images/icon/mo_measure2.png?v=1.0") no-repeat center;
+	background-size: contain;
+}
+.mySecondBarOne .myToolButton:active .bgImg17{
+	background: url("../images/icon/mo_measure2_active.png?v=1.0") no-repeat center;
+	background-size: contain;
+}
+.mySecondBarOne .myToolButton .bgImg18{
+	width: 22px;
+	height: 22px;
+	background: url("../images/icon/mo_view2.png?v=1.0") no-repeat center;
+	background-size: contain;
+}
+.mySecondBarOne .myToolButton:active .bgImg18{
+	background: url("../images/icon/mo_view2_active.png?v=1.0") no-repeat center;
+	background-size: contain;
+}
+.mySecondBarOne .myToolButton.checked .bgImg14 {
+	background: url("../images/icon/mo_segment2_active.png?v=1.0") no-repeat center;
+	background-size: contain;
+}
+.mySecondBarOne .myToolButton.checked .bgImg15 {
+	background: url("../images/icon/mo_plan2_active.png?v=1.0") no-repeat center;
+	background-size: contain;
+}
+.mySecondBarOne .myToolButton.disabled .bgImg14 {
+	background: url("../images/icon/mo_segment2_light_disabled.png?v=1.0") no-repeat center;
+	background-size: contain;
+}
+.mySecondBarOne .myToolButton.disabled .bgImg15 {
+	background: url("../images/icon/mo_plan2_light_disabled.png?v=1.0") no-repeat center;
+	background-size: contain;
+}
+
+
+
+
+
+.image2dViewSeries .myToolButtonImg,
+.mySecondBarOne .myToolButtonImg{
+	margin-top: 1px;
+	height:22px;
+	pointer-events: none;
+	vertical-align: middle;
+}
+
+
+/*布局、更多、长按...的下拉列表*/
+/*通用*/
+.myDropdownContent {
+	background-color: #2E2F34;
+	color: #9E9E9E;
+	font-size: 12px;
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+	box-shadow: 0 1px 2px rgb(0,0,0,0.5);
+	word-break: break-word;
+}
+.myDropdownContent ul{
+	border-radius: 6px;
+}
+.myDropdownContent li{
+	list-style-type: none;
+	/*height: 40px;*/
+	/*line-height: 40px;*/
+	/*white-space: nowrap;*/
+	padding: 10px 12px;
+	/*text-align: center;*/
+}
+.myDropdownContent li img{
+	height: 20px;
+}
+.myDropdownContent li:nth-last-child(1){
+	border: none;
+}
+.myDropdownContent li:active{
+	color: #FFF;
+	background-color: #0DABE1;
+}
+.myDropdownContent .disabled{
+	color:#808080;
+	pointer-events: none;
+}
+
+/*布局及更多的下拉列表*/
+.mySecondBarOne .layoutBtn,
+.mySecondBarOne .moreBtn,
+.mySecondBarOne .surgicalPlanBtn,
+.mySecondBarOne .image3dLiuyuBtn,
+.mySecondBarOne .image3dPlanBtn,
+.mySecondBarOne .image3dReportBtn{
+	position: relative;
+}
+.mySecondBarOne .layoutDropdownContent {
+	/*width: 60px;*/
+	width: -webkit-max-content;
+	width: -moz-max-content;
+	width: max-content;
+	position: absolute;
+	top: 44px;
+	right: 0;
+	font-size: 14px;
+	text-align: left;
+}
+.mySecondBarOne .layoutDropdownContent li.checked{
+	background: #1585FF;
+	color: #FFF;
+}
+.mySecondBarOne .layoutDropdownContent li:active{
+	color: #000;
+	background: rgba(21, 133, 255, 0.2);
+}
+.mySecondBarOne .moreDropdownContent {
+	/*width: 140px;*/
+	width: -webkit-max-content;
+	width: -moz-max-content;
+	width: max-content;
+	position: absolute;
+	top: 50px;
+	right: 0px;
+	font-size: 14px;
+}
+.mySecondBarOne .moreDropdownContent li {
+	max-width: 140px;
+}
+.mySecondBarOne .liuyuDropdownContent {
+	/*width: 58px;*/
+	width: -webkit-max-content;
+	width: -moz-max-content;
+	width: max-content;
+	position: absolute;
+	top: 50px;
+	left: 0px;
+	font-size: 14px;
+}
+.mySecondBarOne .liuyuDropdownContent li {
+	max-width: 58px;
+}
+.mySecondBarOne .planDropdownContent {
+	/*width: 110px;*/
+	width: -webkit-max-content;
+	width: -moz-max-content;
+	width: max-content;
+	position: absolute;
+	top: 50px;
+	left: 0px;
+	font-size: 14px;
+}
+.mySecondBarOne .planDropdownContent li {
+	max-width: 110px;
+}
+.mySecondBarOne .reportDropdownContent {
+	/*width: 110px;*/
+	width: -webkit-max-content;
+	width: -moz-max-content;
+	width: max-content;
+	position: absolute;
+	top: 50px;
+	right: 0px;
+	font-size: 14px;
+}
+.mySecondBarOne .reportDropdownContent li {
+	max-width: 110px;
+}
+
+
+.mySecondBarOne .layoutDropdownContent, 
+.mySecondBarOne .moreDropdownContent, 
+.mySecondBarOne .liuyuDropdownContent,
+.mySecondBarOne .planDropdownContent,
+.mySecondBarOne .reportDropdownContent{
+	display: none;
+	background-color: #43465B;
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+	color: #FFF;
+}
+.mySecondBarOne .moreDropdownContent .relative{
+	position: relative;
+}
+.mySecondBarOne .moreDropdownContent .secondMenu{
+	position: absolute;
+	right: calc(100% + 12px);
+	top: 0px;
+	background-color: #25262d;
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+	color: #CCCCCC;
+	width: 76px;
+}
+
+
+#wrap_model_rotate{
+	position: absolute;
+	top: calc(100% + 6px);
+	right: 6px;
+	z-index: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+#wrap_model_rotate .model_guideContent{
+	right: 0px;
+	width: 300px;
+}
+#model_rotate{
+	width: 30px;
+	height: 30px;
+}
+#model_move{
+	width: 34px;
+	height: 34px;
+	margin-top: 5px;
+}
+#model_move_back{
+	width: 30px;
+	height: 30px;
+	margin-top: 5px;
+	background: url("../images/icon/model_move_back.png") no-repeat center;
+	background-size: contain;
+}
+
+#model_rotate[type=play]{
+	background: url("../images/icon/model_play.png") no-repeat center;
+	background-size: contain;
+}
+#model_rotate[type=pause]{
+	background: url("../images/icon/model_pause.png") no-repeat center;
+	background-size: contain;
+}
+#model_move[type=play]{
+	background: url("../images/icon/model_move.png") no-repeat center;
+	background-size: contain;
+}
+#model_move[type=pause]{
+	background: url("../images/icon/model_move_active.png") no-repeat center;
+	background-size: contain;
+}
+
+
+
+/*设置APP浅色主题样式*/
+/*顶部导航条*/
+.lightTheme .myMenuBar{
+	background-color: #E8E8E8;
+	color: #585858;
+}
+.lightTheme .mySecondBarOne {
+	background-color: #F2F2F2;
+	color: #000;
+}
+
+/*案例页*/
+.lightTheme .mySecondBarOne .toggle2D3D .twoD, 
+.lightTheme .mySecondBarOne .toggle2D3D .threeD{
+	border: 1px solid rgba(151,151,151,1);
+	background-color: transparent;
+	color: #000;
+	box-sizing: border-box;
+}
+
+.lightTheme .mySecondBarOne .toggle2D3D .checked {
+	border: none;
+	background-color: rgb(10, 170, 226);
+	color: #fff;
+}
+/*分组列表*/
+.lightTheme .mySecondBarOne .selectModel {
+	background-color: #E8E8E8;
+	color: #000;
+}
+
+.lightTheme .mySecondBarOne .selectModel .dropDown .checked{
+	background-color: #0DABE1;
+	color: #fff;
+}
+.lightTheme .mySecondBarOne .selectModel .dropDown .opt:active{
+	background-color: #16aee2;
+	color: #fff;
+}
+
+.lightTheme .mySecondBarOne .leftFade {
+	background: linear-gradient(to right, rgba(242, 242, 242, 1) 0%, rgb(242, 242, 242, 0) 100%);
+}
+.lightTheme .mySecondBarOne .rightFade {
+	background: linear-gradient(to right, rgba(242, 242, 242, 0) 0%, rgb(242, 242, 242, 1) 100%);
+}
+
+
+.lightTheme .case_2d .case_2d_foot .foot_content .prePage{
+	background-color: rgb(10, 170, 226);
+}
+.lightTheme .case_2d .case_2d_foot .foot_content .nextPage{
+	background-color: rgb(10, 170, 226);
+}
+.lightTheme .case_3d .case_3d_foot .foot_content .prePage {
+	background-color: rgb(10, 170, 226);
+}
+.lightTheme .case_3d .case_3d_foot .foot_content .nextPage{
+	background-color: rgb(10, 170, 226);
+}
+.lightTheme .case_2d .case_2d_foot .foot_content .prePage:active{
+	background-color: #119aca;
+}
+.lightTheme .case_2d .case_2d_foot .foot_content .nextPage:active{
+	background-color: #119aca;
+}
+.lightTheme .case_3d .case_3d_foot .foot_content .prePage:active {
+	background-color: #119aca;
+}
+.lightTheme .case_3d .case_3d_foot .foot_content .nextPage:active {
+	background-color: #119aca;
+}
+
+.lightTheme #image2dList .bottomBar {
+	background-color: #E8E8E8;
+	color: #000;
+}
+.lightTheme #image2dList .bottomBar .synchroBtn {
+	background-color: rgb(10, 170, 226);
+}
+
+
+/*影像页 -- 测量模块*/
+.lightTheme .triMeasure2dDlg {
+	background-color: #F2F2F2;
+}
+.lightTheme .triMeasure2dDlg .measureButton{
+	background-color: transparent;
+	border: 1px solid #474A4A;
+	color: #474A4A;
+}
+.lightTheme .triMeasure2dDlg .havaActive:active{
+	background-color: inherit;
+	border:1px solid rgba(12,171,225,1);
+	color: #0DABE1;
+}
+/*浅色主题*/
+.lightTheme .triMeasure2dDlg .measureButton .bgImg1{
+  background: url("../images/icon/measure_newMeasure_light.png?v=1.0") no-repeat center;
+  background-size: contain;
+}
+.lightTheme .triMeasure2dDlg .measureButton:active .bgImg1{
+  background: url("../images/icon/measure_newMeasure_click.png?v=1.0") no-repeat center;
+  background-size: contain;
+}
+.lightTheme .triMeasure2dDlg .measureButton .bgImg2{
+  background: url("../images/icon/measure_revoke_light.png?v=1.0") no-repeat center;
+  background-size: contain;
+}
+.lightTheme .triMeasure2dDlg .measureButton:active .bgImg2{
+  background: url("../images/icon/measure_revoke_click.png?v=1.0") no-repeat center;
+  background-size: contain;
+}
+.lightTheme .triMeasure2dDlg .measureButton .bgImg3{
+  background: url("../images/icon/measure_clear_light.png?v=1.0") no-repeat center;
+  background-size: contain;
+}
+.lightTheme .triMeasure2dDlg .measureButton:active .bgImg3{
+  background: url("../images/icon/measure_clear_click.png?v=1.0") no-repeat center;
+  background-size: contain;
+}
+.lightTheme .triMeasure2dDlg .measureButton .bgImg4{
+  background: url("../images/icon/measure_close_light.png?v=1.0") no-repeat center;
+  background-size: contain;
+}
+.lightTheme .triMeasure2dDlg .measureButton:active .bgImg4{
+  background: url("../images/icon/measure_close_click.png?v=1.0") no-repeat center;
+  background-size: contain;
+}
+.lightTheme .triMeasure2dDlg .measureButton .bgImg5{
+  background: url("../images/icon/measure_length_light.png?v=1.0") no-repeat center;
+  background-size: contain;
+}
+.lightTheme .triMeasure2dDlg .measureButton .bgImg6{
+  background: url("../images/icon/measure_angle_light.png?v=1.0") no-repeat center;
+  background-size: contain;
+}
+.lightTheme .triMeasure2dDlg .measureButton .bgImg7{
+  background: url("../images/picture/shut_light.png?v=1.0") no-repeat center;
+  background-size: contain;
+}
+.lightTheme .triMeasure2dDlg .measureButton:active .bgImg7{
+  background: url("../images/picture/shut_light_click.png?v=1.0") no-repeat center;
+  background-size: contain;
+}
+/*选中长度模式*/
+.lightTheme .triMeasure2dDlg .checkedBtn .bgImg5 {
+	background: url(../images/icon/measure_length_click.png?v=1.0) no-repeat center;
+	background-size: contain;
+}
+/*选中角度模式*/
+.lightTheme .triMeasure2dDlg .checkedBtn .bgImg6 {
+	background: url(../images/icon/measure_angle_click.png?v=1.0) no-repeat center;
+	background-size: contain;
+}
+
+
+/*影像页 -- 标注模块*/
+.lightTheme .screenShot {
+	background-color: #F2F2F2;
+}
+.lightTheme .screenShot .palette,
+.lightTheme .screenShot .wrapTool {
+	background-color: #E8E8E8;
+}
+.lightTheme .screenShot .markBtn .bgImg1{
+  background: url("../images/icon/screenShotColor_light.png?v=1.0") no-repeat center;
+  background-size: contain;
+}
+.lightTheme .screenShot .markBtn:active .bgImg1{
+  background: url("../images/icon/screenShotColor_click.png") no-repeat center;
+  background-size: contain;
+}
+.lightTheme .screenShot .markBtn .bgImg2{
+  background: url("../images/icon/screenShotTools_light.png?v=1.0") no-repeat center;
+  background-size: contain;
+}
+.lightTheme .screenShot .markBtn:active .bgImg2{
+  background: url("../images/icon/screenShotTools_click.png") no-repeat center;
+  background-size: contain;
+}
+.lightTheme .screenShot .markBtn .bgImg3{
+  background: url("../images/icon/screenShotBack_light.png?v=1.0") no-repeat center;
+  background-size: contain;
+}
+.lightTheme .screenShot .markBtn:active .bgImg3{
+  background: url("../images/icon/screenShotBack_click.png") no-repeat center;
+  background-size: contain;
+}
+.lightTheme .screenShot .markBtn .bgImg4{
+  background: url("../images/icon/screenShotSend_light.png?v=1.0") no-repeat center;
+  background-size: contain;
+}
+.lightTheme .screenShot .markBtn:active .bgImg4{
+  background: url("../images/icon/screenShotSend_click.png") no-repeat center;
+  background-size: contain;
+}
+.lightTheme .screenShot .markBtn .bgImg5{
+  background: url("../images/picture/shut_light.png?v=1.0") no-repeat center;
+  background-size: contain;
+}
+.lightTheme .screenShot .markBtn:active .bgImg5{
+  background: url("../images/picture/shut_light_click.png") no-repeat center;
+  background-size: contain;
+}
+.lightTheme .screenShot .markBtn {
+  background-color: transparent;
+  border: 1px solid #474A4A;
+  color: #474A4A;
+}
+.lightTheme .screenShot .markBtnSelected {
+	color: #0DABE1;
+  border: 1px solid rgba(12,171,225,1);
+}
+.lightTheme .screenShot .markBtnSelected .bgImg1 {
+	background: url(../images/icon/screenShotColor_click.png?v=1.0) no-repeat center;
+  background-size: contain;
+}
+.lightTheme .screenShot .markBtnSelected .bgImg2{
+	background: url(../images/icon/screenShotTools_click.png?v=1.0) no-repeat center;
+  background-size: contain;
+}
+
+/*
+	模型页-浅色模式
+*/
+.lightTheme .mySecondBarOne .myToolButton{
+	background-color: transparent;
+	border: 1px solid #BDBDBD;
+	color: #000000;
+}
+.lightTheme .mySecondBarOne .myToolButton.checked{
+	background-color: #FFFFFF;
+	border: 1px solid #1585FF;
+	color: #1585FF;
+}
+.lightTheme .mySecondBarOne .toolBtnChecked{
+	border: 1px solid #0CABE1;
+	color: #0DABE1;
+}
+.lightTheme .mySecondBarOne .haveActive:active{
+	background-color: #FFFFFF;
+	border: 1px solid #1585FF;
+	color: #1585FF;
+}
+
+.lightTheme .mySecondBarOne .layoutDropdownContent, 
+.lightTheme .mySecondBarOne .moreDropdownContent, 
+.lightTheme .mySecondBarOne .liuyuDropdownContent,
+.lightTheme .mySecondBarOne .planDropdownContent,
+.lightTheme .mySecondBarOne .reportDropdownContent{
+	background-color: #F2F2F2;
+	box-shadow:0px 4px 4px 0px rgba(0,0,0,0.13);
+	color: #000;
+}
+.lightTheme .mySecondBarOne .moreDropdownContent .secondMenu{
+	background-color: #F2F2F2;
+	color: #000;
+}
+.lightTheme .myDropdownContent .disabled {
+	color: #a0a0a0;
+}
+.lightTheme .modelBar {
+	background-color: #F2F2F2;
+}
+.lightTheme .imgContent{
+	background-color: #E8E8E8;
+}
+
+
+/*模型页--测量模块*/
+.lightTheme .triMeasureDlg {
+	background-color: #E8E8E8;
+}
+.lightTheme .triMeasureDlg .measureButton{
+	background-color: transparent;
+	border: 1px solid #474A4A;
+	color: #474A4A;
+}
+.lightTheme .triMeasureDlg .measureButton .bgImg1{
+  background: url("../images/icon/measure_newMeasure_light.png?v=1.0") no-repeat center;
+  background-size: contain;
+}
+.lightTheme .triMeasureDlg .measureButton:active .bgImg1{
+  background: url("../images/icon/measure_newMeasure_click.png?v=1.0") no-repeat center;
+  background-size: contain;
+}
+.lightTheme .triMeasureDlg .measureButton .bgImg2{
+  background: url("../images/icon/measure_revoke_light.png?v=1.0") no-repeat center;
+  background-size: contain;
+}
+.lightTheme .triMeasureDlg .measureButton:active .bgImg2{
+  background: url("../images/icon/measure_revoke_click.png?v=1.0") no-repeat center;
+  background-size: contain;
+}
+.lightTheme .triMeasureDlg .measureButton .bgImg3{
+  background: url("../images/icon/measure_clear_light.png?v=1.0") no-repeat center;
+  background-size: contain;
+}
+.lightTheme .triMeasureDlg .measureButton:active .bgImg3{
+  background: url("../images/icon/measure_clear_click.png?v=1.0") no-repeat center;
+  background-size: contain;
+}
+.lightTheme .triMeasureDlg .measureButton .bgImg4{
+  background: url("../images/icon/measure_close_light.png?v=1.0") no-repeat center;
+  background-size: contain;
+}
+.lightTheme .triMeasureDlg .measureButton:active .bgImg4{
+  background: url("../images/icon/measure_close_click.png?v=1.0") no-repeat center;
+  background-size: contain;
+}
+.lightTheme .triMeasureDlg .measureButton .bgImg5{
+  background: url("../images/icon/measure_length_click.png?v=1.0") no-repeat center;
+  background-size: contain;
+}
+
+.lightTheme .triMeasureDlg .measureButton .bgImg6{
+  background: url("../images/icon/measure_straight_click.png?v=1.0") no-repeat center;
+  background-size: contain;
+}
+
+.lightTheme .triMeasureDlg .measureButton .bgImg7{
+  background: url("../images/picture/shut_light.png?v=1.0") no-repeat center;
+  background-size: contain;
+}
+.lightTheme .triMeasureDlg .measureButton:active .bgImg7{
+  background: url("../images/picture/shut_light_click.png?v=1.0") no-repeat center;
+  background-size: contain;
+}
+.lightTheme .triMeasureDlg .stateBtn{
+  border:1px solid #0CABE1;
+  color: #0DABE1;
+}
+
+
+
+
+
+
+
+
+
+/*模型页--肝脏切模块*/
+.lightTheme .LiverCutDlg{
+	background-color: #DADADA;
+}
+.lightTheme .LiverCutDlg .liverCutButton{
+	background-color: transparent;
+	border: 1px solid #474A4A;
+	color: #474A4A;
+}
+/*浅色主题*/
+.lightTheme .LiverCutDlg .liverCutButton .bgImg1{
+  background: url("../images/icon/genCut_newCutPoint_light.png") no-repeat center;
+  background-size: contain;
+}
+.lightTheme .LiverCutDlg .liverCutButton:active .bgImg1{
+  background: url("../images/icon/genCut_newCutPoint_click.png") no-repeat center;
+  background-size: contain;
+}
+.lightTheme .LiverCutDlg .liverCutButton .bgImg2{
+  background: url("../images/icon/genCut_revokePoint_light.png") no-repeat center;
+  background-size: contain;
+}
+.lightTheme .LiverCutDlg .liverCutButton:active .bgImg2{
+  background: url("../images/icon/genCut_revokePoint_click.png") no-repeat center;
+  background-size: contain;
+}
+.lightTheme .LiverCutDlg .liverCutButton .bgImg3{
+  background: url("../images/icon/genCut_openSection_light.png") no-repeat center;
+  background-size: contain;
+}
+.lightTheme .LiverCutDlg .liverCutButton:active .bgImg3{
+  background: url("../images/icon/genCut_openSection_click.png") no-repeat center;
+  background-size: contain;
+}
+.lightTheme .LiverCutDlg .liverCutButton .bgImg4{
+  background: url("../images/icon/genCut_resection_light.png") no-repeat center;
+  background-size: contain;
+}
+.lightTheme .LiverCutDlg .liverCutButton:active .bgImg4{
+  background: url("../images/icon/genCut_resection_click.png") no-repeat center;
+  background-size: contain;
+}
+.lightTheme .LiverCutDlg .liverCutButton .bgImg5{
+  background: url("../images/icon/liverCut_riskAssessment_light.png") no-repeat center;
+  background-size: contain;
+}
+.lightTheme .LiverCutDlg .liverCutButton:active .bgImg5{
+  background: url("../images/icon/liverCut_riskAssessment_selected_light.png") no-repeat center;
+  background-size: contain;
+}
+.lightTheme .LiverCutDlg .liverCutButton .bgImg6{
+  background: url("../images/icon/liverCut_openScheme_light.png") no-repeat center;
+  background-size: contain;
+}
+.lightTheme .LiverCutDlg .liverCutButton:active .bgImg6{
+  background: url("../images/icon/liverCut_openScheme_click.png") no-repeat center;
+  background-size: contain;
+}
+.lightTheme .LiverCutDlg .liverCutButton .bgImg7{
+  background: url("../images/icon/liverCut_save_light.png") no-repeat center;
+  background-size: contain;
+}
+.lightTheme .LiverCutDlg .liverCutButton:active .bgImg7{
+  background: url("../images/icon/liverCut_save_click.png") no-repeat center;
+  background-size: contain;
+}
+.lightTheme .LiverCutDlg .liverCutButton .bgImg8{
+  background: url("../images/picture/shut_light.png") no-repeat center;
+  background-size: contain;
+}
+.lightTheme .LiverCutDlg .liverCutButton:active .bgImg8{
+  background: url("../images/picture/shut_light_click.png") no-repeat center;
+  background-size: contain;
+}
+
+/*模型页--高级模式*/
+.lightTheme .mySecondBarOne .myToolButton .bgImg1{
+	width: 22px;
+	height: 22px;
+	background: url("../images/icon/mo_3D_light.png?v=1.0") no-repeat center;
+	background-size: contain;
+}
+.lightTheme .mySecondBarOne .myToolButton .bgImg2{
+	width: 22px;
+	height: 22px;
+	background: url("../images/icon/mo_tree_light.png") no-repeat center;
+	background-size: contain;
+}
+.lightTheme .mySecondBarOne .myToolButton:active .bgImg2{
+	background: url("../images/icon/mo_tree_light_click.png") no-repeat center;
+	background-size: contain;
+}
+.lightTheme .mySecondBarOne .myToolButton .bgImg3{
+	width: 22px;
+	height: 22px;
+	background: url("../images/icon/mo_screenShotDraw_light.png") no-repeat center;
+	background-size: contain;
+}
+.lightTheme .mySecondBarOne .myToolButton:active .bgImg3{
+	background: url("../images/icon/mo_screenShotDraw_light_click.png") no-repeat center;
+	background-size: contain;
+}
+.lightTheme .mySecondBarOne .myToolButton .bgImg4{
+	width: 22px;
+	height: 22px;
+	background: url("../images/icon/mo_windowLH_light.png") no-repeat center;
+	background-size: contain;
+}
+.lightTheme .mySecondBarOne .myToolButton .bgImg5{
+	width: 22px;
+	height: 22px;
+	background: url("../images/icon/mo_measure_light.png") no-repeat center;
+	background-size: contain;
+}
+.lightTheme .mySecondBarOne .myToolButton:active .bgImg5{
+	background: url("../images/icon/mo_measure_light_click.png") no-repeat center;
+	background-size: contain;
+}
+.lightTheme .mySecondBarOne .myToolButton .bgImg6{
+	width: 22px;
+	height: 22px;
+	background: url("../images/icon/mo_cut_light.png") no-repeat center;
+	background-size: contain;
+}
+.lightTheme .mySecondBarOne .myToolButton .bgImg7{
+	width: 22px;
+	height: 22px;
+	background: url("../images/icon/mo_more_light.png") no-repeat center;
+	background-size: contain;
+}
+.lightTheme .mySecondBarOne .myToolButton .mo_3D {
+	background: url("../images/icon/mo_3D_light.png") no-repeat center;
+	background-size: contain;
+}
+.lightTheme .mySecondBarOne .myToolButton .mo_2D {
+	background: url("../images/icon/mo_2D_light.png") no-repeat center;
+	background-size: contain;
+}
+.lightTheme .mySecondBarOne .myToolButton .mo_layout_a3d {
+	background: url("../images/icon/mo_layout_a3d_light.png") no-repeat center;
+	background-size: contain;
+}
+.lightTheme .mySecondBarOne .myToolButton .mo_layout_c {
+	background: url("../images/icon/mo_layout_c_light.png") no-repeat center;
+	background-size: contain;
+}
+.lightTheme .mySecondBarOne .myToolButton .mo_layout_s {
+	background: url("../images/icon/mo_layout_s_light.png") no-repeat center;
+	background-size: contain;
+}
+
+/*选中效果*/
+.lightTheme .mySecondBarOne .toolBtnChecked .bgImg2{
+	background: url("../images/icon/mo_tree_light_click.png") no-repeat center;
+	background-size: contain;
+}
+.lightTheme .mySecondBarOne .toolBtnChecked .bgImg4{
+	background: url("../images/icon/mo_windowLH_light_click.png") no-repeat center;
+	background-size: contain;
+}
+
+/*简易模式--浅色主题*/
+.lightTheme .mySecondBarOne .myToolButton .bgImg8{
+	width: 22px;
+	height: 22px;
+	background: url("../images/icon/mo_lunkuo_light.png?v=1.0") no-repeat center;
+	background-size: contain;
+}
+.lightTheme .mySecondBarOne .myToolButton:active .bgImg8{
+	background: url("../images/icon/mo_lunkuo_selected_light.png?v=1.0") no-repeat center;
+	background-size: contain;
+}
+.lightTheme .mySecondBarOne .myToolButton .bgImg9{
+	width: 22px;
+	height: 22px;
+	background: url("../images/icon/mo_liuyu_light.png?v=1.0") no-repeat center;
+	background-size: contain;
+}
+.lightTheme .mySecondBarOne .myToolButton .bgImg10{
+	width: 22px;
+	height: 22px;
+	background: url("../images/icon/mo_plan_light.png?v=1.0") no-repeat center;
+	background-size: contain;
+}
+.lightTheme .mySecondBarOne .myToolButton:active .bgImg10{
+	background: url("../images/icon/mo_plan_selected_light.png?v=1.0") no-repeat center;
+	background-size: contain;
+}
+.lightTheme .mySecondBarOne .myToolButton .bgImg11{
+	width: 22px;
+	height: 22px;
+	background: url("../images/icon/measure_volume_light.png?v=1.0") no-repeat center;
+	background-size: contain;
+}
+.lightTheme .mySecondBarOne .myToolButton:active .bgImg11{
+	background: url("../images/icon/measure_volume_selected_light.png?v=1.0") no-repeat center;
+	background-size: contain;
+}
+.lightTheme .mySecondBarOne .myToolButton .bgImg12{
+	width: 22px;
+	height: 22px;
+	background: url("../images/icon/liverCut_riskAssessment_light.png?v=1.0") no-repeat center;
+	background-size: contain;
+}
+.lightTheme .mySecondBarOne .myToolButton:active .bgImg12{
+	background: url("../images/icon/liverCut_riskAssessment_selected_light.png?v=1.0") no-repeat center;
+	background-size: contain;
+}
+
+/*
+	2021-04-02
+	新的模型工具栏按钮
+*/
+.lightTheme .mySecondBarOne .myToolButton .bgImg13{
+	width: 22px;
+	height: 22px;
+	background: url("../images/icon/mo_reset_light.png?v=1.0") no-repeat center;
+	background-size: contain;
+}
+.lightTheme .mySecondBarOne .myToolButton:active .bgImg13{
+	background: url("../images/icon/mo_reset_active.png?v=1.0") no-repeat center;
+	background-size: contain;
+}
+.lightTheme .mySecondBarOne .myToolButton .bgImg14{
+	width: 22px;
+	height: 22px;
+	background: url("../images/icon/mo_segment2_light.png?v=1.0") no-repeat center;
+	background-size: contain;
+}
+.lightTheme .mySecondBarOne .myToolButton:active .bgImg14{
+	background: url("../images/icon/mo_segment2_active.png?v=1.0") no-repeat center;
+	background-size: contain;
+}
+.lightTheme .mySecondBarOne .myToolButton .bgImg15{
+	 width: 22px;
+	 height: 22px;
+	 background: url("../images/icon/mo_plan2_light.png?v=1.0") no-repeat center;
+	 background-size: contain;
+ }
+.lightTheme .mySecondBarOne .myToolButton:active .bgImg15{
+	background: url("../images/icon/mo_plan2_active.png?v=1.0") no-repeat center;
+	background-size: contain;
+}
+.lightTheme .mySecondBarOne .myToolButton .bgImg16{
+	width: 22px;
+	height: 22px;
+	background: url("../images/icon/mo_mark2_light.png?v=1.0") no-repeat center;
+	background-size: contain;
+}
+.lightTheme .mySecondBarOne .myToolButton:active .bgImg16{
+	background: url("../images/icon/mo_mark2_active.png?v=1.0") no-repeat center;
+	background-size: contain;
+}
+.lightTheme .mySecondBarOne .myToolButton .bgImg17{
+	width: 22px;
+	height: 22px;
+	background: url("../images/icon/mo_measure2_light.png?v=1.0") no-repeat center;
+	background-size: contain;
+}
+.lightTheme .mySecondBarOne .myToolButton:active .bgImg17{
+	background: url("../images/icon/mo_measure2_active.png?v=1.0") no-repeat center;
+	background-size: contain;
+}
+.lightTheme .mySecondBarOne .myToolButton .bgImg18{
+	width: 22px;
+	height: 22px;
+	background: url("../images/icon/mo_view2_light.png?v=1.0") no-repeat center;
+	background-size: contain;
+}
+.lightTheme .mySecondBarOne .myToolButton:active .bgImg18{
+	background: url("../images/icon/mo_view2_active.png?v=1.0") no-repeat center;
+	background-size: contain;
+}
+.lightTheme .mySecondBarOne .myToolButton.checked .bgImg14 {
+	background: url("../images/icon/mo_segment2_active.png?v=1.0") no-repeat center;
+	background-size: contain;
+}
+.lightTheme .mySecondBarOne .myToolButton.checked .bgImg15 {
+	background: url("../images/icon/mo_plan2_active.png?v=1.0") no-repeat center;
+	background-size: contain;
+}
+.lightTheme .mySecondBarOne .myToolButton.disabled .bgImg14 {
+	background: url("../images/icon/mo_segment2_light_disabled.png?v=1.0") no-repeat center;
+	background-size: contain;
+}
+.lightTheme .mySecondBarOne .myToolButton.disabled .bgImg15 {
+	background: url("../images/icon/mo_plan2_light_disabled.png?v=1.0") no-repeat center;
+	background-size: contain;
+}
+
+
+
+/*模型页--血管标记*/
+.lightTheme .VesLabelDlg .vesLabelButton{
+	background-color: transparent;
+	border: 1px solid #474A4A;
+	color: #474A4A;
+}
+.lightTheme .VesLabelDlg .vesLabelButton .bgImg1{
+	background: url("../images/icon/vesLabel_select_light.png?v=1.0") no-repeat center;
+  background-size: contain;
+}
+.lightTheme .VesLabelDlg .vesLabelButton:active .bgImg1{
+	background: url("../images/icon/vesLabel_select_click.png?v=1.0") no-repeat center;
+  background-size: contain;
+}
+.lightTheme .VesLabelDlg .vesLabelButton .bgImg2{
+	background: url("../images/icon/vesLabel_calc_light.png?v=1.0") no-repeat center;
+  background-size: contain;
+}
+.lightTheme .VesLabelDlg .vesLabelButton:active .bgImg2{
+	background: url("../images/icon/vesLabel_calc_click.png?v=1.0") no-repeat center;
+  background-size: contain;
+}
+.lightTheme .VesLabelDlg .vesLabelButton .bgImg3{
+	background: url("../images/icon/liverCut_openScheme_light.png?v=1.0") no-repeat center;
+  background-size: contain;
+}
+.lightTheme .VesLabelDlg .vesLabelButton:active .bgImg3{
+	background: url("../images/icon/liverCut_openScheme_click.png?v=1.0") no-repeat center;
+  background-size: contain;
+}
+.lightTheme .VesLabelDlg .vesLabelButton .bgImg4{
+	background: url("../images/icon/liverCut_save_light.png?v=1.0") no-repeat center;
+  background-size: contain;
+}
+.lightTheme .VesLabelDlg .vesLabelButton:active .bgImg4{
+	background: url("../images/icon/liverCut_save_click.png?v=1.0") no-repeat center;
+  background-size: contain;
+}
+.lightTheme .VesLabelDlg .vesLabelButton .bgImg5{
+	background: url("../images/picture/shut_light.png?v=1.0") no-repeat center;
+  background-size: contain;
+}
+.lightTheme .VesLabelDlg .vesLabelButton:active .bgImg5{
+	background: url("../images/picture/shut_light_click.png?v=1.0") no-repeat center;
+  background-size: contain;
+}
+
+
+
+/*交流页*/
+.lightTheme .myBottomBar{
+	background-color: #E8E8E8;
+	color: #000;
+	box-shadow: 0px 0px 6px 0px rgba(100,100,100,0.2)
+}
+
+/*交流--好友信息*/
+.lightTheme .friendInfo .friendDropdown {
+  background-color: #F2F2F2;
+  color: #000;
+}
+
+.bgBtn {
+		width: 30px;
+    height: 30px;
+    margin-top: 5px;
+    background-color: #438cff;
+    border-radius: 15px;
+    color: #fff;
+    font-size: 16px;
+		display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+}

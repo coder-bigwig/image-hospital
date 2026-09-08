@@ -1,0 +1,79 @@
+{
+  "users": [
+    {
+      "id": "u-admin",
+      "username": "admin",
+      "displayName": "系统管理员",
+      "role": "admin",
+      "password": "admin123"
+    },
+    {
+      "id": "u-doctor",
+      "username": "doctor",
+      "displayName": "李医生",
+      "role": "doctor",
+      "password": "doctor123"
+    }
+  ],
+  "cases": [
+    {
+      "id": "case-knee",
+      "title": "左膝关节置换术前规划",
+      "category": "骨科",
+      "description": "示例病例：用于演示三维模型、二维影像、测量与术前方案管理。",
+      "patient": {
+        "sex": "男",
+        "age": 58,
+        "note": "演示数据，不含真实患者身份信息"
+      },
+      "status": "已发布",
+      "favorite": false,
+      "updatedAt": "2026-09-08T12:42:31.991Z",
+      "thumbnail": "knee",
+      "structures": [
+        {
+          "id": "femur",
+          "name": "股骨",
+          "color": "#f2b97d",
+          "visible": true,
+          "opacity": 1
+        },
+        {
+          "id": "tibia",
+          "name": "胫骨",
+          "color": "#86c7a4",
+          "visible": true,
+          "opacity": 1
+        },
+        {
+          "id": "implant",
+          "name": "假体参考",
+          "color": "#6ea8de",
+          "visible": false,
+          "opacity": 0.75
+        }
+      ],
+      "images": [
+        {
+          "id": "ct-axial",
+          "name": "CT 横断面",
+          "count": 48,
+          "width": 512,
+          "height": 512,
+          "spacing": 0.8
+        }
+      ]
+    }
+  ],
+  "plans": [],
+  "comments": [],
+  "shares": [
+    {
+      "token": "5c817721f4a5570f5f167dff",
+      "caseId": "case-knee",
+      "createdBy": "u-admin",
+      "expiresAt": "2026-09-09T12:42:31.996Z",
+      "revoked": true
+    }
+  ]
+}

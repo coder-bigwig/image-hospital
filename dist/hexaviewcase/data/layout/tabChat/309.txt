@@ -1,0 +1,5 @@
+<div id="Layout_309" class="totalPage"> 
+	<div name="barMenu" > </div>
+	<div name="barChatTop" > </div>
+	<div name="sessionInfo"> </div>
+</div>

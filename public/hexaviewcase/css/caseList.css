@@ -1,0 +1,20 @@
+/* 案例 - 搜索 */
+.mainPage .search {
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	bottom: 60px;
+	right: 10px;
+	background-color: #1585ff;
+	box-shadow: 0px 2px 8px rgba(0, 144, 193, 0.3);
+	border-radius: 8px;
+	z-index: 2;
+}
+.mainPage .search img {
+	vertical-align: middle;
+	width: 24px;
+	height: 24px;
+}

@@ -1,0 +1,4 @@
+<div id="Layout_400" class="totalPage">  
+	<div name="barMenu" > </div>
+	<div name="myselfMain"> </div>
+</div>

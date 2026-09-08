@@ -1,0 +1,8 @@
+<div id="Layout_213" class="totalPage">   <!--show 3D model + object tree-->
+	<div name="barMenu" > </div>
+	<div name="barImage" > </div>
+	<div id="imgContent" class="imgContent">
+		<div name="view3D" > </div>
+		<div name="modelTree" > </div> 
+	</div>
+</div>

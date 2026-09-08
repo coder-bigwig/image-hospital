@@ -1,0 +1,7 @@
+<div id="Layout_203" class="totalPage">  <!--show origna image (sagittalViewCon) -->
+	<div name="barMenu" > </div>
+	<div name="barImage" > </div>
+	<div id="imgContent" class="imgContent">
+		<div name="sagittalViewCon" > </div> 
+	</div>  
+</div>

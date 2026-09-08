@@ -1,0 +1,989 @@
+<script>
+  (function () {
+    var query = new URLSearchParams(window.location.search);
+    if (!query.has('para')) {
+      var demoPara = 'eyJ2aWV3Y2FzZSI6MSwidmlzaXRvcl9pZCI6IjMyNTgiLCJzZWxmX2FjY291bnQiOjAsImNhc2VJRCI6IjM2MzUxIiwicmVzdWx0TmFtZSI6IjAwMl9iaXpxXC9yZXN1bHQtMyIsImRlZmF1bHRMYW4iOiJ6aCIsImhpZGVQYXRpZW50IjoiMCIsImF1dG9Td2l0Y2giOjEsInZpc2l0b3JfdG9rZW4iOiJleUowZVhBaU9pSktWMVFpTENKaGJHY2lPaUpJVXpJMU5pSjkuZXlKbGVIQnBjbVZmZEdsdFpTSTZJakl3TWpZdE1Ea3RNVElnTURRNk1UZzZNVGNpTENKMWMyVnlYMmxrSWpvaU16STFPQ0o5LkZUcHh1VEcxZ3lwZWF0ay1rcF9SUjd6OThlTXRrdUJIUkNfRkZvRjhSV0kifQ';
+      window.location.replace(window.location.pathname + '?v=1.0.406&para=' + demoPara);
+    }
+  })();
+</script>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, width=device-width, initial-scale=1.0">
+	<meta id="i18n_viewer" content="viewer">
+	<title>Image3D</title>
+	<link rel="icon" type="image/png" href="images/favicon.png?v=1.02">
+
+	<script>
+		document.write("<script src='./TriTreeViewer/global.js?v="+Date.now()+"'><\/script>");
+	</script>
+
+	<script src="js/jquery/jquery-3.0.0.min.js"></script>
+	<script src="js/jquery/jquery.easing.js"></script>
+	<script src="js/md5.js"></script>
+	<script src="js/jquery.i18n.properties.js?v=1.01"></script>
+	<script src="js/localforage.js?v=1.01"></script>
+	<script src="js/layer/layer.js?v=1.01"></script>
+	<script src="js/dwv/ext/rii-mango/lossless-min.js?v=1.02"></script>
+	<script src="js/jimDat/jimModule.js?v=1.23"></script>
+
+	<script>
+		document.write('<link rel="stylesheet" type="text/css" href="css/main.css?v='+m_url.params.v+'">');
+		document.write('<link rel="stylesheet" type="text/css" href="css/myGlobal.css?v='+m_url.params.v+'">');
+		document.write('<link rel="stylesheet" type="text/css" href="css/myMsgDialog.css?v='+m_url.params.v+'">');
+		
+		document.write("<script src='TriTreeViewer/gFunctions.js?v="+m_url.params.v+"'><\/script>");
+		document.write("<script src='TriTreeViewer/wxApi.js?v="+m_url.params.v+"'><\/script>");
+		document.write("<script src='TriTreeViewer/language.js?v="+m_url.params.v+"'><\/script>");
+		document.write("<script src='TriTreeViewer/myMsgDialog.js?v="+m_url.params.v+"'><\/script>");
+		document.write("<script src='TriTreeViewer/network.js?v="+m_url.params.v+"'><\/script>");
+		document.write("<script src='TriTreeViewer/myStorage.js?v="+m_url.params.v+"'><\/script>");
+		document.write("<script src='TriTreeViewer/appFileList.js?v="+m_url.params.v+"'><\/script>");
+		document.write("<script src='TriTreeViewer/viewer_onload.js?v="+m_url.params.v+"'><\/script>");
+	</script>
+
+
+</head>
+
+<body class="lightTheme">
+	<div class="totalPage">
+		<!-- 加载动画 -->
+		<div class="loadContent">
+			<div class="loadColumn">
+				<div class="loadContainer animation-2">
+					<div class="shape shape1"></div>
+					<div class="shape shape2"></div>
+					<div class="shape shape3"></div>
+					<div class="shape shape4"></div>
+				</div>
+			</div>
+		</div>
+
+		<div id="all_items" style="display: none;">
+			
+			<!-- 主菜单栏 -->
+			<div id="barMenu" class="myMenuBar">
+				<div class=" wrapLogo">
+					<img id="logoImg" class="logoImg" src="images/picture/logo.png?v=1.02" alt="">
+				</div>
+				<div class="wrapTabs">
+					<div id="TAB_case" class=" myMenuBarButton i18n" name="viewer_text1" onclick="funGotoTab(TAB_case);">案例</div>
+					<div id="TAB_img2D" class=" myMenuBarButton i18n hide" name="viewer_text2" onclick="funGotoTab(TAB_img2D);">影像</div>
+					<div id="TAB_img" class=" myMenuBarButton i18n" name="viewer_text3" onclick="funGotoTab(TAB_img);">模型</div>
+					<div id="TAB_chat" class=" myMenuBarButton" onclick="funGotoTab(TAB_chat);"><span class="i18n" name="viewer_text4">交流</span>
+						<div id="chatTabHaveMsg" class="chatTabHaveMsg"></div>
+					</div>
+					<div id="TAB_myself" class=" myMenuBarButton i18n" name="viewer_text5" onclick="funGotoTab(TAB_myself);">我的</div>
+					<div id="TAB_download" class="myMenuBarButton i18n" name="viewer_text95" onclick="funGotoTab(TAB_download);">下载</div>
+				</div>
+			</div>
+			
+			<!-- 案例页--菜单栏 -->
+			<div id="barCaseList" class="mySecondBarOne caseBar">
+				<div id="modelTab3D2D" class="toggle2D3D leftInline hide">
+					<div id="toggle2D" class="twoD">2D</div>
+					<div id="toggle3D" class="threeD">3D</div>
+				</div>
+				<!-- 以下拉框形式展示3D案例分组列表 -->
+				<div id="model3DGroups" class="selectModel rightInline hide">
+					<div id="select3DModel" class="selectModelBtn"></div>
+					<span class="triangle"></span>
+					<div id="select3DDropDown" class="dropDown">
+					</div>
+				</div>
+				<!-- 以左右滑动列表展示3D案例分组 -->
+				<div class="model_3DGroup">
+					<div class="wrap_list">
+						<!-- <div class="gap"></div>
+						<div class="gap"></div> -->
+						<div id="model_3DGroupList" class="list" style="padding-left:20px;padding-right:20px;"></div>
+						<!-- <div class="gap"></div>
+						<div class="gap"></div> -->
+					</div>
+					<div id="model_3DGroupLeftFade" class="leftFade"></div>
+					<div id="model_3DGroupRightFade" class="rightFade"></div>
+				</div>
+				<!-- show2D -->
+				<div id="model2DGroups" class="selectModel rightInline">
+					<div id="select2DModel" class="selectModelBtn"></div>
+					<span class="triangle"></span>
+					<div id="select2DDropDown" class="dropDown"></div>
+				</div>
+				<!--  <div class="myScanButton rightInline" onclick="m_gF.m_tabCase.showScanner();"><img class="myScanButtonImg" src="images/icon/scan.png"/></div> -->
+			</div>
+			<!-- 案例页--展示案例列表 -->
+			<div id="mainPage" class="mainPage">
+				<div name="caseList"> </div>
+				<div name="image2dList"></div>
+				<!-- <div name="schedule"></div> -->
+				<div name="search" class="search" id="btn_case_search">
+					<img src="./images/icon/case_screen.png?v=1.0">
+				</div>
+			</div>
+
+			<!-- 模型页--工具栏 -->
+			<div id="barImage" class="mySecondBarOne modelBar">
+				<div class="inMySecondBarOne">
+					<div id="myToolButton_content1">
+						<div id="image3dResetBtn" class="myToolButton haveActive">
+							<div class="bgImg13"></div>
+							<span class="i18n" name="viewer_model_1">重置</span>
+						</div>
+					</div>
+					<div id="myToolButton_content2">
+						<div id="image3dSegmentBtn" class="myToolButton haveActive">
+							<div class="bgImg14"></div>
+							<span class="i18n" name="viewer_model_2">分段</span>
+						</div>
+					</div>
+					<div id="myToolButton_content3">
+						<div id="image3dPlanBtn" class="myToolButton haveActive">
+							<div class="bgImg15"></div>
+							<span class="i18n" name="viewer_model_3">方案</span>
+						</div>
+					</div>
+					<div id="myToolButton_content4">
+						<!-- <div id="image3dScreenDrawBtn" class="myToolButton haveActive">
+							<div class="bgImg16"></div>
+							<span class="i18n" name="viewer_model_4">标注</span>
+						</div> -->
+						<div class="layoutBtn">
+							<div id="model_markBtn" class="myToolButton haveActive">
+								<div class="bgImg16"></div>
+								<span class="i18n" name="viewer_model_4">标注</span>
+							</div>
+							<ul id="model_markBtnMenu" class="layoutDropdownContent myDropdownContent">
+								<li id="model_2dMark" class="i18n" name="viewer_model_6">二维标注</li>
+								<li id="model_3dMark" class="i18n" name="viewer_model_7">三维标注</li>
+							</ul>
+						</div>
+					</div>
+					<div id="myToolButton_content5">
+						<div id="image3dRulerBtn" class="myToolButton haveActive">
+							<div class="bgImg17"></div>
+							<span class="i18n" name="viewer_model_5">测量</span>
+						</div>
+					</div>
+					<div id="myToolButton_content6">
+						<div class="layoutBtn">
+							<div id="myLayoutBtn" class="myToolButton haveActive">
+								<div class="bgImg18"></div>
+								<span class="i18n" name="layoutBtn_text9">视图</span>
+							</div>
+							<ul id="myLayoutBtnMenu" class="layoutDropdownContent myDropdownContent">
+								<li id="modelLayoutBtn" class="i18n checked" name="layoutBtn_text1">三维</li>
+								<li id="axialLayoutBtn" class="i18n" name="layoutBtn_text2">影像</li>
+								<li id="axi3dLayoutBtn" class="i18n" name="layoutBtn_text3">三维+横断面</li>
+								<!--A-横断面 -->
+								<li id="corLayoutBtn" class="i18n hide" name="layoutBtn_text4">冠状面</li>
+								<!--C-冠状面 -->
+								<li id="sagLayoutBtn" class="i18n hide" name="layoutBtn_text5">矢状面</li>
+								<!--S-矢状面 -->
+								<li id="cor3dLayoutBtn" class="i18n hide" name="layoutBtn_text6">三维+冠状面</li>
+								<li id="sag3dLayoutBtn" class="i18n hide" name="layoutBtn_text7">三维+矢状面</li>
+								<li id="ar3dLayoutBtn" class="i18n" name="layoutBtn_text8">三维+AR</li>
+								<li id="crop3dLayoutBtn" class="i18n " name="layoutBtn_text10">裁剪框</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div id="wrap_model_rotate">
+					<div id="model_rotate" type="play"></div>
+					<div id="model_move" type="play"></div>
+					<div id="model_move_back"></div>
+					<div id="bgBtn" class="bgBtn">BG</div>
+					<div id="myToolButton_content7"></div>
+				</div>
+			</div>
+
+			<!-- 交流页--头部 -->
+			<div id="barChatTop">
+				<div id="chatTopSearch" class="chatTopSearch">
+					<div class="one">
+						<div class="cell1">
+							<input id="chat_search" class="search" type="text" autocomplete="off" maxlength="30">
+							<div id="chat_search_placeholder" class="placeholder"><img class="icon" src="./images/icon/chat_search.png"><span class="i18n" name="viewer_text103">搜索</span></div>
+						</div>
+						<div id="chatSearchCancel" class="cancelBtn"><button class="i18n" name="viewer_text104">取消</button></div>
+					</div>
+					<div id="chatSearchResult" class="two">
+						<div class="item">
+							<div class="title i18n" name="viewer_text105">好友</div>
+							<div id="chatSearchFriendResult" class="container">
+							</div>
+						</div>
+						<div class="item">
+							<div class="title i18n" name="viewer_text106">会话</div>
+							<div id="chatSearchSessionResult" class="container">
+							</div>
+						</div>
+						<div class="item">
+							<div class="title i18n" name="viewer_text107">群聊</div>
+							<div id="chatSearchGroupResult" class="container">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="chatTopBar" class="mySecondBarTwo">
+					<div id="chatTopLeftDiv" class="leftInline chatTopLeftDiv">
+						<img class="chatTopBackIcon leftInline" src="images/picture/leftArrow.png" />
+					</div>
+					<div id="chatTopTitle" class="leftInline wrapSpan i18n" name="viewer_text30">会话</div>
+					<div id='chatTopRightDiv' class="rightInline"></div>
+				</div>
+			</div>
+			<!-- 交流页--底部 -->
+			<div id="barChatBottom" class="myBottomBar">
+				<div class="outButton">
+					<div class="wrapBottomButton">
+						<div id="sessionListBtn" class="myChatButton">
+							<div class="bgImg1"></div>
+							<span class="i18n" name="viewer_text31">会话</span>
+						</div>
+					</div>
+				</div>
+				<div class="outButton">
+					<div class="wrapBottomButton">
+						<div id="friendListBtn" class="myChatButton">
+							<div class="bgImg2"></div>
+							<span class="i18n" name="viewer_text32">通讯录</span>
+							<div id="chatTabHaveFriendMsg" class="chatTabHaveFriendMsg"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="view3D">
+				<canvas id='grid3d' style="position:absolute;"> </canvas>
+				<div class="clearFloat"></div>
+			</div>
+			<div id="axialViewCon" class="view2D">
+				<div class="left_top_info">
+					<div><span class="dirName"></span></div>
+				</div>
+				<div class="right_bottom_info">
+					<div><span class="downProgress">&nbsp;</span></div>
+					<div><span class="count">&nbsp;</span></div>
+					<div><span class="windowW_C">&nbsp;</span></div>
+				</div>
+			</div>
+			<div id="coronalViewCon" class="view2D">
+				<div class="left_top_info">
+					<div><span class="dirName"></span></div>
+				</div>
+				<div class="right_bottom_info">
+					<div><span class="downProgress">&nbsp;</span></div>
+					<div><span class="count">&nbsp;</span></div>
+					<div><span class="windowW_C">&nbsp;</span></div>
+				</div>
+			</div>
+			<div id="sagittalViewCon" class="view2D">
+				<div class="left_top_info">
+					<div><span class="dirName"></span></div>
+				</div>
+				<div class="right_bottom_info">
+					<div><span class="downProgress">&nbsp;</span></div>
+					<div><span class="count">&nbsp;</span></div>
+					<div><span class="windowW_C">&nbsp;</span></div>
+				</div>
+			</div>
+
+			<!-- 模型页--模树区域 -->
+			<div id="modelTree" class="modelTree">
+				<div id="All-models-details" class="allModelsDetails"></div>
+				<div id="modelTreeLeftFadeDiv" class="leftFadeDiv"></div>
+				<div id="modelTreeRightFadeDiv" class="rightFadeDiv"></div>
+				<div class="wrapTreeDiv">
+					<div id="All-models-details_tree" class="treeDiv"></div>
+					<div id="modelTreeWrapSuspendDiv" class="wrapSuspendDiv">
+						<div class="suspendDiv">
+							<div id="modelTreeReportBtn" class="suspendBtn2 report">
+								<div class="suspendBtnIcon bgImg5"></div>
+								<span class="i18n" name="viewer_modelBtn_8">报告</span>
+								<div class="report-more">
+									<div class="reportBtn report-a">
+										<div class="bg"></div>
+										<span>通用</span>
+									</div>
+									<div class="reportBtn report-b report-lung">
+										<div class="bg"></div>
+										<span>肺</span>
+									</div>
+									<div class="reportBtn report-b report-bileduct">
+										<div class="bg"></div>
+										<span>胆管</span>
+									</div>
+									<div class="reportBtn report-b report-pancreas">
+										<div class="bg"></div>
+										<span>胰腺</span>
+									</div>
+								</div>
+							</div>
+							<div id="modelTreeAssessmentBtn" class="suspendBtn2 assessment">
+								<div class="suspendBtnIcon bgImg6"></div>
+								<span class="i18n" name="viewer_modelBtn_9">评估</span>
+							</div>
+							<div id="modelTreeVascularBtn" class="suspendBtn2 vascularMarker">
+								<div class="suspendBtnIcon bgImg7"></div>
+								<span class="i18n" name="viewer_modelBtn_13">标记</span>
+							</div>
+							<div class="relative">
+								<div id="modelTreeOperationBtns" class="operationBtns">
+									<div id="modelTreeLungSegmentBtn" class="suspendBtn2 lungCut">
+										<div class="suspendBtnIcon bgImg3"></div>
+										<span class="i18n" name="viewer_modelBtn_12">肺切除</span>
+									</div>
+									<div id="modelTreeLiverCutBtn" class="suspendBtn2 liverCut">
+										<div class="suspendBtnIcon bgImg2"></div>
+										<span class="i18n" name="viewer_modelBtn_11">肝切除</span>
+									</div>
+									<div id="modelTreeLiverSegmentBtn" class="suspendBtn2 liverSegment">
+										<div class="suspendBtnIcon bgImg2"></div>
+										<span class="i18n" name="viewer_modelBtn_15">肝段切</span>
+									</div>
+									<div id="modelTreeGenCutBtn" class="suspendBtn2 commonCut">
+										<div class="suspendBtnIcon bgImg1"></div>
+										<span class="i18n" name="viewer_modelBtn_10">通用切</span>
+									</div>
+									<div id="modelTreeSkullCutBtn" class="suspendBtn2 skullCut">
+										<div class="suspendBtnIcon bgImg8"></div>
+										<span class="i18n" name="viewer_modelBtn_14">颅窗切</span>
+									</div>
+								</div>
+								<div id="modelTreeOperationBtn" class="suspendBtn2 operation">
+									<div class="suspendBtnIcon bgImg4"></div>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+			<div id="volumeTree" class="modelTree relative">
+				<div id="All-volumes"></div>
+				<div id="volumeTreeLeftFadeDiv" class="leftFadeDiv"></div>
+				<div id="volumeTreeRightFadeDiv" class="rightFadeDiv"></div>
+				<div class="wrapTreeDiv">
+					<div id="All-volumes_tree" class="treeDiv"></div>
+				</div>
+			</div>
+
+			<!-- 日历 -->
+			<div id="schedule" style="overflow-y:auto;">
+				<div id='calendar' class='calendar'>
+					<div class='calendar-title-box'>
+						<span id='prevMonth' class='prev-month'></span>
+						<span id='calendarTitle' class='calendar-title'></span>
+						<span id='nextMonth' class='next-month'></span>
+					</div>
+					<div class='calendar-body-box'>
+						<div id='scheduleTitleDiv' class='scheduleTitleDiv'></div>
+						<table id='calendarTable' class='calendar-table'>
+						</table>
+					</div>
+				</div>
+				<div id="eventsCountDown" class="eventsCountDown">
+					<div id="eventsCountDownTitle" class="eventsCountDownTitle">
+						<div class="text">重要事项</div>
+					</div>
+					<div id="eventsCountDownContents" class="eventsCountDownContents"></div>
+				</div>
+				<div id="oneDayEvents" class="oneDayEvents">
+					<div id="oneDayEventsTitle" class="oneDayEventsTitle">
+						<div class="text">今日待办事项</div>
+					</div>
+					<div id="oneDayEventsContents" class="oneDayEventsContents"></div>
+				</div>
+			</div>
+
+			<!-- 案例页--3D案例列表 -->
+			<div id="caseList" class="case_3d">
+				<div class="case_container">
+					<div id="dropCaseListDiv" class="case_3d_head">
+						<div id="caseListDataTable" class="caseListDataTable"></div>
+					</div>
+				</div>
+				<div class="case_3d_foot">
+					<div class="foot_content">
+						<span id="caseListPrevBtn" class="prePage i18n" name="viewer_text37">上一页</span>&nbsp;&nbsp;
+						<span id="caseListCurPage">0</span>&nbsp;/&nbsp;<span id="caseListTotalPage">0</span>&nbsp;&nbsp;
+						<span id="caseListNextBtn" class="nextPage i18n" name="viewer_text38">下一页</span>
+						&nbsp;&nbsp;
+						<!-- <span id="searchCaseBtn" class="btn">搜索</span> -->
+						<span id="caseListFootTr" class="totalItems"></span>
+					</div>
+				</div>
+			</div>
+
+			<!-- 案例页--2D案例列表 -->
+			<div id="image2dList" class="case_2d">
+				<div class="case_container">
+					<div class="case_white_padding">
+						<div id="dropImage2dListDiv" class="case_2d_head">
+							<div id="image2dListDataTable"></div>
+						</div>
+					</div>
+				</div>
+				<div class="case_2d_foot">
+					<div class="foot_content">
+						<span id="image2dListPrevBtn" class="prePage i18n" name="viewer_text39">上一页</span>&nbsp;&nbsp;
+						<span id="image2dListCurPage">0</span>&nbsp;/&nbsp;<span id="image2dListTotalPage">0</span>&nbsp;&nbsp;
+						<span id="image2dListNextBtn" class="nextPage i18n" name="viewer_text40">下一页</span>
+						&nbsp;&nbsp;
+						<span id="image2dListFootTd" class="totalItems"></span>
+					</div>
+				</div>
+				<div class="bottomBar">
+					<div class="container">
+						<span id="syncMsgSpan" class="text1"></span>
+						<div id="mainPageSyncDiv" class="wrapSynchroBtn"><button id="synchroBtn" class="synchroBtn i18n" name="viewer_text33">同步数据</button></div>
+					</div>
+				</div>
+			</div>
+			<div id="triPlanerPanel" style="white-space:nowrap;"></div>
+
+			<!-- 影像页 -->
+			<div id="image2dView" class="image2dView">
+				<div id="image2dViewToolDiv" class="toolDiv">
+					<div class="wrapImage2DBtns">
+						<div id="image2dViewReportBtn" class="report_btn image2D_btn">
+							<div class="bgImg"></div>
+							<span class="i18n" name="viewer_text94">报告</span>
+						</div>
+						<div id="image2dViewTurnBtn" class="turnPage_btn image2D_btn">
+							<div class="bgImg"></div>
+							<span class="i18n" name="viewer_text74">翻页</span>
+						</div>
+						<div id="image2dViewTranBtn" class="move_btn image2D_btn" title="移动">
+							<div class="bgImg"></div>
+							<span class="i18n" name="viewer_text75">移动</span>
+						</div>
+						<div id="image2dViewZoomBtn" class="zoom_btn image2D_btn" title="缩放">
+							<div class="bgImg"></div>
+							<span class="i18n" name="viewer_text76">缩放</span>
+						</div>
+						<div id="image2dViewWindowBtn" class="brightness_btn image2D_btn" title="调窗">
+							<div class="bgImg"></div>
+							<span class="i18n" name="viewer_text77">调窗</span>
+						</div>
+						<div id="image2dViewWCPresetBtn" class="wlPresets_btn image2D_btn" title="窗宽窗位">
+							<div class="bgImg"></div>
+							<span class="i18n" name="viewer_text78">宽位</span>
+							<div class="dropDown" style="display: none;">
+								<div id="image2dViewWCPresetMenu0" preset="0" class="item"><span class="i18n" name="viewer_text79">重置窗宽窗位</span></div>
+								<div id="image2dViewWCPresetMenu1" preset="1" class="item"><span class="i18n" name="viewer_text80">骨窗</span>（W:2000, C:500）</div>
+								<div id="image2dViewWCPresetMenu2" preset="2" class="item"><span class="i18n" name="viewer_text81">肺窗</span>（W:1600, C:-600）</div>
+								<div id="image2dViewWCPresetMenu3" preset="3" class="item"><span class="i18n" name="viewer_text82">腹窗</span> (W:400, C:40)</div>
+								<div id="image2dViewWCPresetMenu4" preset="4" class="item"><span class="i18n" name="viewer_text83">脑窗</span> (W:70, C:30)</div>
+								<div id="image2dViewWCPresetMenu5" preset="5" class="item"><span class="i18n" name="viewer_text84">软组织窗</span> (W:350, C:50)</div>
+								<div id="image2dViewWCPresetMenu6" preset="6" class="item"><span class="i18n" name="viewer_text85">肝窗</span> (W:160, C:60)</div>
+								<div id="image2dViewWCPresetMenu7" preset="7" class="item"><span class="i18n" name="viewer_text86">纵膈窗</span> (W:500, C:50)</div>
+								<div id="image2dViewWCPresetMenu8" preset="8" class="item"><span class="i18n" name="viewer_text87">卒中窗</span> (W:30, C:30)</div>
+								<div id="image2dViewWCPresetMenu9" preset="9" class="item"><span class="i18n" name="viewer_text88">CTA窗</span> (W:600, C:170)</div>
+							</div>
+						</div>
+						<div id="image2dViewLayoutBtn" class="layout_btn image2D_btn" title="布局">
+							<div class="bgImg"></div>
+							<span class="i18n" name="viewer_text89">布局</span>
+							<div class="dropDown" style="display: none;">
+								<div class="item xulie">
+									<div class="title i18n" name="viewer_text90">序列</div>
+									<div class="x_content">
+										<div id="image2dLay1Btn" class="layout1x1_btn image2D_btn2" title="1x1"></div>
+										<div id="image2dLay2Btn" class="layout2x1_btn image2D_btn2" title="2x1"></div>
+										<div id="image2dLay3Btn" class="layout3x1_btn image2D_btn2" title="3x1"></div>
+										<div id="image2dLay4Btn" class="layout2x2_btn image2D_btn2" title="2x2"></div>
+									</div>
+								</div>
+								<div class="vline"></div>
+								<div class="item mpr">
+									<div class="title">MPR/3D</div>
+									<div class="mpr_content">
+										<div id="image2dLay_mpr1Btn" class="mpr_btn image2D_btn2" title="MPR"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div id="image2dViewMeasure" class="measure_btn image2D_btn" title="测量">
+							<div class="bgImg"></div>
+							<span class="i18n" name="viewer_text91">测量</span>
+						</div>
+						<div id="image2dScreenDrawBtn" class="mark_btn image2D_btn" title="标注">
+							<div class="bgImg"></div>
+							<span class="i18n" name="viewer_text92">标注</span>
+						</div>
+						<div id="image2dViewLutBtn" class="backColor_btn image2D_btn" title="Lut">
+							<div class="bgImg"></div>
+							<span name="viewer_text">Lut</span>
+							<div class="dropDown" style="display: none;">
+								<div id="image2dViewLutMenu0" luttype="0" class="item">plain</div>
+								<div id="image2dViewLutMenu1" luttype="1" class="item">invPlain</div>
+								<div id="image2dViewLutMenu2" luttype="2" class="item">rainbow</div>
+								<div id="image2dViewLutMenu3" luttype="3" class="item">hot</div>
+								<div id="image2dViewLutMenu4" luttype="4" class="item">hot_iron</div>
+								<div id="image2dViewLutMenu5" luttype="5" class="item">pet</div>
+								<div id="image2dViewLutMenu6" luttype="6" class="item">hot_metal_blue</div>
+								<div id="image2dViewLutMenu7" luttype="7" class="item">pet_20step</div>
+							</div>
+						</div>
+						<div id="image2dViewUserInfoBtn" class="userInfo_btn image2D_btn" title="信息">
+							<div class="bgImg"></div>
+							<span class="i18n" name="viewer_text93">信息</span>
+						</div>
+					</div>
+				</div>
+				<!-- 图像区 -->
+				<div id="image2dViewScreenShot" class="image2dViewScreenShot">
+					<div id="image2dViewContainer" class="wrapCanvas">
+						<div class="canvas1">
+							<canvas id="image2dViewCanvas1" class="image2dViewCanvas"></canvas>
+							<div class="left_top_info">
+								<!-- 病历号 -->
+								<div><span class="patientID">&nbsp;</span></div>
+								<!-- 年龄 -->
+								<div><span class="patientAge">&nbsp;</span></div>
+								<!-- 性别  F女， M男 -->
+								<div><span class="patientSex">&nbsp;</span></div>
+							</div>
+							<div class="left_bottom_info">
+								<!-- 序列名 -->
+								<div><span class="seriesName">&nbsp;</span></div>
+								<!-- 层厚 -->
+								<div><span class="thick">&nbsp;</span></div>
+							</div>
+							<div class="right_top_info">
+								<!-- 检查日期 -->
+								<div><span class="studyDate">&nbsp;</span></div>
+								<!-- 检查时间 -->
+								<div><span class="studyTime">&nbsp;</span></div>
+								<!-- 缩放比例 -->
+								<div><span class="scale">&nbsp;</span></div>
+							</div>
+							<div class="right_bottom_info">
+								<!-- 下载进度 -->
+								<div><span class="downProgress">&nbsp;</span></div>
+								<!-- 当前张数/总张数 -->
+								<div><span class="count">&nbsp;</span></div>
+								<!-- 宽位 -->
+								<div><span class="windowW_C">&nbsp;</span></div>
+							</div>
+						</div>
+						<div class="canvas2">
+							<canvas id="image2dViewCanvas2" class="image2dViewCanvas"></canvas>
+							<div class="left_top_info">
+								<!-- 病历号 -->
+								<div><span class="patientID">&nbsp;</span></div>
+								<!-- 年龄 -->
+								<div><span class="patientAge">&nbsp;</span></div>
+								<!-- 性别  F女， M男 -->
+								<div><span class="patientSex">&nbsp;</span></div>
+							</div>
+							<div class="left_bottom_info">
+								<!-- 序列名 -->
+								<div><span class="seriesName">&nbsp;</span></div>
+								<!-- 层厚 -->
+								<div><span class="thick">&nbsp;</span></div>
+							</div>
+							<div class="right_top_info">
+								<!-- 检查日期 -->
+								<div><span class="studyDate">&nbsp;</span></div>
+								<!-- 检查时间 -->
+								<div><span class="studyTime">&nbsp;</span></div>
+								<!-- 缩放比例 -->
+								<div><span class="scale">&nbsp;</span></div>
+							</div>
+							<div class="right_bottom_info">
+								<!-- 下载进度 -->
+								<div><span class="downProgress">&nbsp;</span></div>
+								<!-- 当前张数/总张数 -->
+								<div><span class="count">&nbsp;</span></div>
+								<!-- 宽位 -->
+								<div><span class="windowW_C">&nbsp;</span></div>
+							</div>
+						</div>
+						<div class="canvas3">
+							<canvas id="image2dViewCanvas3" class="image2dViewCanvas"></canvas>
+							<div class="left_top_info">
+								<!-- 病历号 -->
+								<div><span class="patientID">&nbsp;</span></div>
+								<!-- 年龄 -->
+								<div><span class="patientAge">&nbsp;</span></div>
+								<!-- 性别  F女， M男 -->
+								<div><span class="patientSex">&nbsp;</span></div>
+							</div>
+							<div class="left_bottom_info">
+								<!-- 序列名 -->
+								<div><span class="seriesName">&nbsp;</span></div>
+								<!-- 层厚 -->
+								<div><span class="thick">&nbsp;</span></div>
+							</div>
+							<div class="right_top_info">
+								<!-- 检查日期 -->
+								<div><span class="studyDate">&nbsp;</span></div>
+								<!-- 检查时间 -->
+								<div><span class="studyTime">&nbsp;</span></div>
+								<!-- 缩放比例 -->
+								<div><span class="scale">&nbsp;</span></div>
+							</div>
+							<div class="right_bottom_info">
+								<!-- 下载进度 -->
+								<div><span class="downProgress">&nbsp;</span></div>
+								<!-- 当前张数/总张数 -->
+								<div><span class="count">&nbsp;</span></div>
+								<!-- 宽位 -->
+								<div><span class="windowW_C">&nbsp;</span></div>
+							</div>
+						</div>
+						<div class="canvas4">
+							<canvas id="image2dViewCanvas4" class="image2dViewCanvas"></canvas>
+							<div class="left_top_info">
+								<!-- 病历号 -->
+								<div><span class="patientID">&nbsp;</span></div>
+								<!-- 年龄 -->
+								<div><span class="patientAge">&nbsp;</span></div>
+								<!-- 性别  F女， M男 -->
+								<div><span class="patientSex">&nbsp;</span></div>
+							</div>
+							<div class="left_bottom_info">
+								<!-- 序列名 -->
+								<div><span class="seriesName">&nbsp;</span></div>
+								<!-- 层厚 -->
+								<div><span class="thick">&nbsp;</span></div>
+							</div>
+							<div class="right_top_info">
+								<!-- 检查日期 -->
+								<div><span class="studyDate">&nbsp;</span></div>
+								<!-- 检查时间 -->
+								<div><span class="studyTime">&nbsp;</span></div>
+								<!-- 缩放比例 -->
+								<div><span class="scale">&nbsp;</span></div>
+							</div>
+							<div class="right_bottom_info">
+								<!-- 下载进度 -->
+								<div><span class="downProgress">&nbsp;</span></div>
+								<!-- 当前张数/总张数 -->
+								<div><span class="count">&nbsp;</span></div>
+								<!-- 宽位 -->
+								<div><span class="windowW_C">&nbsp;</span></div>
+							</div>
+						</div>
+					</div>
+					<!-- 选择系列区 -->
+					<div id="image2dViewSeries" class="image2dViewSeries">
+						<div id="image2dViewSeriesItems" class="main">
+							<!-- <div class="item">
+						<div class="top">
+						<div class="row_one">1-21aass-ss</div>
+						<div class="row_two">「12」</div>
+						</div>
+						<div class="bottom"></div>
+					</div> -->
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- 交流页--会话列表 -->
+			<div id='sessionList' class="mySessionList">
+				<table id='sessionListTable' class="listSession">
+				</table>
+			</div>
+
+			<!-- 交流页--通讯录 -->
+			<div id='friendList' class="friendList">
+				<div id="wrapAddFriend" class="wrapListFriend">
+					<table class="listFriend">
+						<tr id="newFriendTr">
+							<td>
+								<div class="wrapFriendMsgAlert">
+									<div id="friendMsgAlert" class="friendMsgAlert"></div>
+								</div>
+								<img src="images/icon/addBook_newFriend.png" />
+							</td>
+							<td class="i18n" name="viewer_text45">新的朋友</td>
+						</tr>
+						<tr id="initiateProTr">
+							<td><img src="images/icon/addBook_newNoctGroup.png" />
+							</td>
+							<td class="i18n" name="viewer_text46">发起群聊（专业）</td>
+						</tr>
+						<tr id="initiateComTr">
+							<td><img src="images/icon/addBook_newCommonGroup2.png" />
+							</td>
+							<td class="i18n" name="viewer_text47">发起群聊</td>
+						</tr>
+						<tr id="joinGroupChatByCodeTr">
+							<td><img src="images/icon/addBook_codeGroup.png" />
+							</td>
+							<td class="i18n" name="viewer_text101">邀请码进群</td>
+						</tr>
+						<tr class="wrapIndexTr">
+							<td>
+								<div class="wrapIndex"><span class="i18n" name="viewer_text48">我的群聊</span></div>
+							</td>
+							<td></td>
+						</tr>
+						<tr id="proGroupChatTr">
+							<td><img src="images/icon/addBook_newNoctGroup.png" />
+							</td>
+							<td class="i18n" name="viewer_text49">我的群聊（专业）</td>
+						</tr>
+						<tr id="comGroupChatTr">
+							<td><img src="images/icon/addBook_lifeGroup2.png" />
+							</td>
+							<td class="i18n" name="viewer_text50">我的群聊</td>
+						</tr>
+					</table>
+				</div>
+				<div id='wrapFriendListTable' class="wrapListFriend">
+					<table id='friendListTable' class="listFriend"></table>
+				</div>
+			</div>
+
+			<!-- 交流--聊天界面 -->
+			<div id="myChat" class="myChat">
+				<div id="messageViewer" class="myChatViewer"></div>
+				<div id="noTraceSign" class="noTraceSign i18n" name="viewer_text51">无痕模式</div>
+				<audio id="voiceMsgAudio" class="displayNone"></audio>
+				<audio id="comingMsgAudio" class="displayNone" src="resource/music/comingMsg.wav"></audio>
+				<div id="voicePrompt" class="voicePrompt">
+					<div><img id="voicePromptImg" class="voicePromptImg" src="images/picture/microphone.png" /></div>
+					<div id="voicePromptText" class="voicePromptText i18n" name="viewer_text52">手指上滑，取消发送</div>
+					<div id="voiceCountDown" class="voiceCountDown"><span id="voiceCountDownText"></span></div>
+				</div>
+				<div id="chatView_footer" class="myChat_wrapBottom">
+					<div id="editArea" class="editArea">
+						<div id="changeModeBtn" class="changeModeBtn"><img id="changeModeBtnImg" class="changeModeBtnImg" /></div>
+						<pre id="hideMsg" class="chatHideTextarea"><span>content</span><br></pre>
+						<textarea id="myText" maxlength="4096" class="chatTextarea"></textarea>
+						<div id="myChat_preViewImg" class="preViewImg" contenteditable="true" style="display: none;"></div>
+						<div id="myRecordBtn" class="myRecordBtn"></div>
+						<button id="mySendBtn" class="mySendBtn i18n" name="viewer_text53">发送</button>
+						<div id="moreToolBtn" class="moreToolBtn"><img id="moreToolBtnImg" class="moreToolBtnImg" src="images/picture/moreTool.png?v=1.1.01" /></div>
+						<!--<div class="clearFloat"></div> -->
+					</div>
+					<div id='myChatTools' class="myChatTools">
+						<!--发送文件按钮 -->
+						<div class="chatSendFileBtn">
+							<div class="SendFileIcon">
+								<img src="images/picture/sendFile.png?v=1.1.01">
+								<input id='myChatSendFileInput' class="sendFileInput" type="file">
+							</div>
+							<div class="sendFileWord i18n" name="viewer_text54">文件</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- 群信息详情 -->
+			<div id='sessionInfo' class="sessionInfo">
+				<div class="groupMember">
+					<div id="sessionInfoMember" class="sessionInfoMember"></div>
+				</div>
+				<div id="wrapSessionInfoTitle" class="wrapSessionInfoTitle">
+					<table class="sessionInfoTitle">
+						<tr id="modifySessionIconBtn">
+							<td class="i18n" name="viewer_text55">群头像</td>
+							<td>
+								<div class="wrapModifyGroupIcon">
+									<img id="sessionInfoIcon" class="sessionInfoIcon">
+									<img class="rightArrow" src="images/picture/rightArrow.png">
+									<input id='sessionIconInput' class="sessionIconInput" type="file" accept="image/*">
+								</div>
+							</td>
+						</tr>
+						<tr id="modifySessionTitleBtn">
+							<td class="i18n" name="viewer_text56">群名称</td>
+							<td>
+								<div class="textAndRightArrow">
+									<span id="sessionInfoTitle" class="text"></span>
+									<img class="rightArrow" src="images/picture/rightArrow.png">
+								</div>
+							</td>
+						</tr>
+						<tr id="getSessionInviteCodeBtn">
+							<td class="i18n" name="viewer_text100">获取邀请码</td>
+							<td>
+								<div class="textAndRightArrow">
+									<span class="text"></span>
+									<img class="rightArrow" src="images/picture/rightArrow.png">
+								</div>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div class="wrapSettingGroupSession">
+					<table id="settingGroupSession" class="settingGroupSession">
+						<tr>
+							<td class="i18n" name="viewer_text57">消息免打扰</td>
+							<td>
+								<input id="noDisturbCBox" class="chooseBtn" type="checkbox" />
+								<label for="noDisturbCBox" class="choose-label"></label>
+							</td>
+						</tr>
+						<tr>
+							<td class="i18n" name="viewer_text58">置顶聊天</td>
+							<td>
+								<input id="stickSessionCBox" class="chooseBtn" type="checkbox" />
+								<label for="stickSessionCBox" class="choose-label"></label>
+							</td>
+						</tr>
+						<tr>
+							<td class="i18n" name="viewer_text59">无痕聊天</td>
+							<td>
+								<input id="noTraceCBox" class="chooseBtn" type="checkbox" />
+								<label for="noTraceCBox" class="choose-label"></label>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div id="wrapGroupNicknames" class="wrapGroupNicknames">
+					<table id="GroupNicknames" class="GroupNicknames">
+						<tr id="modifySessionNicknameBtn" class="modifySessionNicknameBtn">
+							<td class="i18n" name="viewer_text60">我在本群的昵称</td>
+							<td>
+								<div class="textAndRightArrow">
+									<span id="sessionInfoNickname" class="text"></span>
+									<img class="rightArrow" src="images/picture/rightArrow.png">
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="i18n" name="viewer_text61">显示群成员昵称</td>
+							<td>
+								<input id="showNicknameCBox" class="chooseBtn" type="checkbox" />
+								<label for="showNicknameCBox" class="choose-label"></label>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div class="wrapEmptyGroupChat">
+					<table id="emptyGroupChat" class="emptyGroupChat">
+						<tr id="session_complain">
+							<td class="i18n" name="viewer_text62">投诉</td>
+							<td>
+								<div class="textAndRightArrow">
+									<span class="text"></span>
+									<img class="rightArrow" src="images/picture/rightArrow.png">
+								</div>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div id="exitChatBtn" class="exitChatBtn" style="display: none;">
+					<span class="i18n" name="viewer_text63" >删除并退出</span>
+				</div>
+				<div id="deleteChatBtn" class="deleteChatBtn" style="display: none;">
+					<span class="i18n" name="viewer_text64">解散群聊</span>
+				</div>
+			</div>
+
+			<!-- 我的 页签 -->
+			<div id="myselfMain" class="myselfMain">
+				<div class="myInfo">
+					<div class="head">
+						<div class="wrap_head_icon">
+							<div id="myHeadImg"></div>
+							<div id="myself_editInfo" class="editInfo">
+								<div class="editBtn i18n" name="viewer_text102">编辑</div>
+							</div>
+						</div>
+						<div id="myselfRefreshBtn" class="updateState">
+							<div class="updateIcon"></div>
+							<div class="updateText i18n" name="viewer_text69">更新状态</div>
+						</div>
+					</div>
+					<div class="wrap_nickName"><span id="myNickName"></span></div>
+					<div class="m_bottom">
+						<div id="myselfMain_certState" class="wrap_icon_one"></div>
+						<div class="wrap_icon_one"><img class="icon_one" src="images/icon/myself_mobile.png"><span id="myPhoneNum"></span></div>
+						<div class="wrap_icon_one"><img class="icon_one" src="images/icon/myself_modifyPerInfo.png"><span id="myBasicInfoTr" class="m_btn i18n" name="viewer_text65">个人信息</span></div>
+					</div>
+				</div>
+				<div class="m_item border" id="certificationTr">
+					<div class="wrap_icon_two"><img class="icon_two" src="images/icon/myself_authentication.png"></div>
+					<div class="i18n" name="viewer_text66">专业认证</div>
+					<div class="wrap_icon_three"><img class="icon_three" src="images/icon/myself_rightArrow.png"></div>
+				</div>
+				<div class="m_item m_marginBottom" id="getCertCodeTr">
+					<div class="wrap_icon_two"><img class="icon_two" src="images/icon/myself_getCertCode.png"></div>
+					<div class="i18n" name="viewer_text108">专业认证码</div>
+					<div class="wrap_icon_three"><img class="icon_three" src="images/icon/myself_rightArrow.png"></div>
+				</div>
+				<div class="m_item" id="joinUsTr" style="display: none;">
+					<div class="wrap_icon_two"><img class="icon_two" src="images/icon/myself_join.png"></div>
+					<div class="i18n" name="viewer_text70">我要加盟</div>
+					<div class="wrap_icon_three"><img class="icon_three" src="images/icon/myself_rightArrow.png"></div>
+				</div>
+				<div class="m_item" id="promoQRcodeTr" style="display: none;">
+					<div class="wrap_icon_two"><img class="icon_two" src="images/icon/myself_discountCode.png"></div>
+					<div class="i18n" name="viewer_text71">优惠下单码</div>
+					<div class="wrap_icon_three"><img class="icon_three" src="images/icon/myself_rightArrow.png"></div>
+				</div>
+				<div class="m_item" id="inviteQRcodeTr" style="display: none;">
+					<div class="wrap_icon_two"><img class="icon_two" src="images/icon/myself_invite.png"></div>
+					<div class="i18n" name="viewer_text72">推荐好友</div>
+					<div class="wrap_icon_three"><img class="icon_three" src="images/icon/myself_rightArrow.png"></div>
+				</div>
+				<div class="m_item" id="managementTr">
+					<div class="wrap_icon_two"><img class="icon_two" src="images/icon/myself_manage.png"></div>
+					<div class="i18n" name="viewer_text73">管理系统</div>
+					<div class="wrap_icon_three"><img class="icon_three" src="images/icon/myself_rightArrow.png"></div>
+				</div>
+				<div class="m_item m_marginTop border" id="contactServiceTr">
+					<div class="wrap_icon_two"><img class="icon_two" src="images/icon/myself_custServ.png"></div>
+					<div class="i18n" name="viewer_text68">客服</div>
+					<div class="wrap_icon_three"><img class="icon_three" src="images/icon/myself_rightArrow.png"></div>
+				</div>
+				<div class="m_item" id="mySettingTr">
+					<div class="wrap_icon_two"><img class="icon_two" src="images/icon/myself_setting.png"></div>
+					<div class="i18n" name="viewer_text67">设置</div>
+					<div class="wrap_icon_three"><img class="icon_three" src="images/icon/myself_rightArrow.png"></div>
+				</div>
+			</div>
+
+			<!-- 编辑头像 -->
+			<div id="editHeadImg" class="editHeadImg">
+				<div id="editHeadMaskTop" class="blackMask"></div>
+				<div id="editHeadMaskRight" class="blackMask"></div>
+				<div id="editHeadMaskLeft" class="blackMask"></div>
+				<div id="editHeadMaskBottom" class="blackMask"></div>
+				<canvas id='originImgCanvas' class="originImgCanvas"></canvas>
+				<canvas id='clipImgCanvas' class="clipImgCanvas"></canvas>
+			</div>
+
+			<!-- 下载APP -->
+			<div id="downAppPage">
+				<div class="downAppPage">
+					<div class="downAppPageContent">
+						<div class="downAppLabel i18n" name="viewer_text96">完整版功能请下载APP（包含医患交流，健康管理，手术规划等最新功能）</div>
+						<button class="downAppBtn i18n" name="viewer_text97" onclick="window.location.href='../../home/download/apps/wxJump/wxJump.html';">下载APP</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		;(function(){
+			// 预加载图像
+			var imgArr = [
+				'images/picture/logo_offline.png',
+				'images/picture/logo_poorNeteork.png',
+				'images/picture/logo.png',
+				'./login/images/login_bg.png?v=1.0',
+				'./login/images/register_bg.png?v=1.1',
+				'./login/images/resetPass_bg.png',
+				'./images/icon/index_warn.png',
+				'./images/icon/index_ok.png',
+				'./js/layer/theme/default/icon.png',
+				'./js/layer/theme/default/loading-1.gif'
+			];
+			cacheImg(imgArr);
+		})();
+		
+	</script>
+</body>
+
+</html>

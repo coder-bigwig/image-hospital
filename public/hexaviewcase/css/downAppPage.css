@@ -1,0 +1,30 @@
+/*下载APP界面*/
+.downAppPage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.downAppPage .downAppPageContent {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.downAppPage .downAppLabel {
+    width: 300px;
+    margin: 0 auto;
+}
+
+.downAppPage .downAppBtn {
+    background-color: #0aaae2;
+    border-radius: 5px;
+    padding: 5px 10px;
+    border: none;
+    font-size:14px;
+    color:white;
+    outline: none;
+    margin-top: 15px;
+}

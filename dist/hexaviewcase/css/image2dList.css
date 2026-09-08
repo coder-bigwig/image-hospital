@@ -1,0 +1,83 @@
+
+.image2dList {
+    padding-left: 4px;
+    padding-right: 4px;
+    position:relative; 
+    color:#e6e6e6;
+}
+.image2dList .image2dTable {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    table-layout: fixed;
+    border: 0.5px dotted #A4A4A4;
+    background-color: #323232;
+    font-size: 14px;
+}
+
+/*tbody的tr*/
+.image2dList .image2dListData {
+    height:40px;
+}
+.image2dList .image2dTable thead tr {
+    height: 40px;
+    font-size: 14px;
+    font-weight: bold;
+    border-bottom: 0.5px dotted #A4A4A4;
+}
+.image2dList .image2dListDataSel {
+    background: #038fbf;
+}
+/*表格尾部*/
+.image2dList .image2dListFootTr {
+    height: 40px;
+    text-align: center;
+    font-size: 14px;
+}
+
+/*使表头固定*/
+/*tbody*/
+.image2dList .image2dListDataTable{
+    display: block;
+    height:410px;
+    overflow-y:auto;
+    overflow-x:hidden;
+    background: #48484a;
+}
+.image2dList .image2dTable thead, .image2dList .image2dListDataTable tr{
+    display: table;
+    table-layout: fixed;
+    width:100%;
+    border-collapse: collapse;
+}
+
+.image2dList .image2dListDataTable tr td{
+    border-bottom: 0.5px dashed #A4A4A4;
+    border-right: 0.5px dashed #A4A4A4;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/*序号*/
+.image2dList .image2dTable .imageNumTd {
+    width: 60px;
+}
+
+/*修改 滚动条样式*/
+.image2dList .image2dListDataTable::-webkit-scrollbar {
+    width: 5px;
+    display: none;
+}
+.image2dList .image2dListDataTable::-webkit-scrollbar-track {
+  background-color: #848484;
+  -webkit-border-radius: 5em;
+  -moz-border-radius: 5em;
+  border-radius: 5em;
+}
+.image2dList .image2dListDataTable::-webkit-scrollbar-thumb {
+  background-color: #585858;
+  -webkit-border-radius: 5em;
+  -moz-border-radius: 5em;
+  border-radius: 5em;
+}

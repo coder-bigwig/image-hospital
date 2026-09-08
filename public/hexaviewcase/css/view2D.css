@@ -1,0 +1,147 @@
+.view2D .wrapCanvas{
+	position: relative;
+	font-size: 12px;
+	color: #fff;
+}
+.view2D .wrapCanvas .left_top_info{
+	position: absolute;
+	left: 6px;
+	top: 46px;
+}
+.view2D .wrapCanvas .left_bottom_info{
+	position: absolute;
+	left: 6px;
+	bottom: 10px;
+}
+.view2D .wrapCanvas .right_top_info{
+	position: absolute;
+	right: 6px;
+	top: 46px;
+	text-align: right;
+}
+.view2D .wrapCanvas .right_bottom_info{
+	position: absolute;
+	right: 6px;
+	bottom: 10px;
+	text-align: right;
+}
+
+
+
+.mySliderBox{
+  width: 100%;
+  height: 40px;
+  background: #F4F4F4;
+  color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mySliderBox .imageCount {
+  display: inline-block;
+  vertical-align: middle;
+  padding-left: 4px;
+}
+.mySliderBox .imageCount .myRangeBox {
+  display: inline-block;
+  min-width: 22px;
+  text-align: center;
+}
+
+.mySliderBox .wrapMySlider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mySliderBox .endCount {
+  display: inline-block;
+  /*min-width: 30px;*/
+  /*text-align: center;*/
+}
+
+.mySliderBox .window {
+  width: 54px;
+  height: 28px;
+  line-height: 28px;
+  background: #F2F2F2 url(../images/icon/view2D_window.png) no-repeat;
+  background-position: 2.5px 2.5px;
+  background-size: 21px 21px;
+  padding-left: 24px;
+  border-radius: 4px;
+  border: 1px solid #BDBDBD;
+  box-sizing: border-box;
+  margin-left: 4px;
+}
+.mySliderBox .window.toolBtnChecked{
+  background: url(../images/icon/view2D_window_click.png) no-repeat center;
+  background-position: 2.5px 2.5px;
+  background-size: 21px 21px;
+  color: #1585FF;
+  border: 1px solid #1585FF;
+}
+
+/*上一张、下一张按钮*/
+.mySliderBox .prevPageBtn, 
+.mySliderBox .nextPageBtn {
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+}
+.mySliderBox .prevPageBtn {
+  padding-right: 4px;
+  background: url(../images/icon/2DImage_pre.png?v=1.0) no-repeat center;
+  background-size: contain;
+  background-origin: content-box;
+}
+.mySliderBox .prevPageBtn:active {
+  background: url(../images/icon/2DImage_pre_click.png?v=1.0) no-repeat center;
+  background-size: contain;
+  background-origin: content-box;
+}
+.mySliderBox .nextPageBtn {
+  padding-left: 4px;
+  background: url(../images/icon/2DImage_next.png?v=1.0) no-repeat center;
+  background-size: contain;
+  background-origin: content-box;
+}
+.mySliderBox .nextPageBtn:active {
+  background: url(../images/icon/2DImage_next_click.png?v=1.0) no-repeat center;
+  background-size: contain;
+  background-origin: content-box;
+}
+
+
+/*滑动条*/
+.mySliderBox input[type=range] {
+  -webkit-appearance: none;
+  margin-left: 9.5px;
+  margin-right: 9.5px;
+  height:6px;
+  width: 135px;
+  border-radius: 5px;
+  background: -webkit-linear-gradient(left,#16B6FF,#16B6FF) no-repeat, #ddd;
+  background-size: 50% 100%;
+  vertical-align: middle;
+}
+.mySliderBox input[type=range]:focus {
+  outline: none;
+}
+.mySliderBox input[type=range]::-webkit-slider-runnable-track {
+  margin-left: -7.5px;
+  margin-right: -7.5px; 
+}
+.mySliderBox input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 15px;
+  width: 15px;
+  background-image:url("images/icon/2DImage_thumb.png");
+  background-size:100% 100%;
+  background-color: transparent; /*ios*/
+  border: none; /*兼容ios*/
+}
+
+
+
+/*浅色模式*/

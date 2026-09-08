@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="UTF-8"/>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>医觅吉科技(广州)有限公司</title>
+<meta name="description" content="医觅吉科技(广州)有限公司" />
+<meta name="keywords" content="医觅吉科技(广州)有限公司" />
+<link rel="icon" href="images/yimiji.png" type="image/png">
+<link href="css/public.css" rel="stylesheet" type="text/css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery-1.7.2.js"></script>
+<script src="js/banner.js"></script>
+<script src="js/nav.js" ></script>
+</head>
+<body>
+<!--  header start   -->
+<div class="header">
+  <div class="top_bar">
+    <div class="mar_auto clearfix"> <span class="float_l color_6 bg_tb pd20">医觅吉科技(广州)有限公司官方网站！</span>
+      <div class="p_link float_r">
+        <p class="bg_tb1 pd30 color_6 float_l">咨询热线：<B class="color_f60 font16">18195504884</B></p>
+        <div class="link float_l"> | <a href="#">设为首页</a> | <a href="#">加入收藏</a> | <a href="#" class="pd_right">联系我们</a></div>
+      </div>
+    </div>
+  </div>
+  <div class="logo_menu mar_auto clearfix"> <a href="/"><img src="images/logo.jpg" class="float_l" /></a>
+    <div class="nav float_r">
+      <div class="navmain">
+        <ul id="nav_all">
+          <li><a href="index.html" class="current">网站首页</a></li>
+          <li><a href="product.html">产品介绍</a></li>
+          <li><a href="about.html">关于我们</a></li>
+          <li><a href="contact.html">联系我们</a></li>
+		  <li><a href="message.html">在线留言</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--  main start   -->
+<div class="main"> 
+  
+  <!--  banner start   -->
+  <div class="banner" id="banner" > <a href="#" class="d1" style="background:url(images/01.jpg) center no-repeat;"></a> <a href="#" class="d1" style="background:url(images/02.jpg) center no-repeat;"></a> <a href="#" class="d1" style="background:url(images/03.jpg) center no-repeat;"></a> <a href="#" class="d1" style="background:url(images/04.jpg) center no-repeat;"></a><a href="#" class="d1" style="background:url(images/05.jpg) center no-repeat;"></a>
+    <div class="d2" id="banner_id">
+      <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+  </div>
+  
+  <!--  products start   -->
+  <div class="products">
+    <div class="pro_tie">
+      <div class="mar_auto clearfix">
+        <h2 class="float_l color_6">产品介绍</h2>
+        <a href="productlist.html" class="float_r font14">查看更多产品</a></div>
+    </div>
+    <div class="pro_con mar_auto clearfix">
+      <div class="pro_c_tie float_l color_fff">
+        <h3><B>Products</B></h3>
+            <p><a href="product.html#section">功能和优势</a></p>
+            <p><a href="productlist.html#section1">市场分析</a></p>
+            <p><a href="productlist1.html#section2">我们的优势</a></p>
+            <p><a href="productlist2.html#section3">技术起源</a></p>
+            <p><a href="productlist3.html#section4">产品详情</a></p>
+            <p><a href="productlist4.html#section5">科研创新</a></p>
+            <p><a href="productlist5.html#section6">未来展望</a></p>
+        </div>
+      <ul class="pro_c_list .mar_auto">
+        <li><a href="productlist.html"><img src="images/pro_img2.png" />
+          <p>市场分析</p>
+          </a></li>
+        <li><a href="productlist1.html"><img src="images/pro_img1.png" />
+          <p>我们的优势</p>
+          </a></li>
+        <li><a href="productlist2.html"><img src="images/pro_img6.jpg" />
+          <p>技术起源</p>
+          </a></li>
+        <li><a href="productlist3.html"><img src="images/pro_img4.png" />
+          <p>产品介绍</p>
+          </a></li>
+        <li><a href="productlist4.html"><img src="images/pro_img7.png" />
+          <p>科研创新</p>
+          </a></li>
+        <li><a href="productlist5.html"><img src="images/pro_img3.png" />
+          <p>未来展望</p>
+        </ul>
+    </div>
+  </div>		
+	<div class="About us">
+	  <div class="pro_tie">
+	    <div class="mar_auto clearfix">
+	      <h2 class="float_l color_6">关于我们</h2>
+	      <a href="productlist.html" class="float_r font14">查看更多详情</a></div>
+	  </div>
+	  <div class="pro_con mar_auto clearfix">
+	    <div class="pro_c_tie float_l color_fff">
+	      <h3><B>Products</B></h3>
+	          <p><a href="about.html">公司简介</a></p>
+	          <p><a href="about.html">核心团队</a></p>
+	      </div>
+	    <ul class="pro_c_list .mar_auto">
+	      <li><a href="about.html#section4"><img src="images/pic05.jpg" />
+	        <p>姓名:DR.LIU JIMIN</p>
+	        </a></li>
+	      <li><a href="about.html#section5"><img src="images/pic06.jpg" />
+	        <p>姓名:DR.ZHOU JIAYIN</p>
+	        </a></li>
+	      <li><a href="about.html#section6"><img src="images/pic07.jpg" />
+	        <p>姓名:DR.BHANU</p>
+	        </a></li>
+	      <li><a href="about.html#section8"><img src="images/pic09.jpg" />
+	        <p>姓名:PROF.LONDON</p>
+	        </a></li>
+	      <li><a href="about.html#section9"><img src="images/pic10.jpg" />
+	        <p>姓名:DR.TOO CW</p>
+	        </a></li>
+	      <li><a href="about.html#section10"><img src="images/pic11.jpg" />
+	        <p>姓名:CS.ARVIND</p>
+	      </ul>
+    </div>
+  </div>
+
+  <!--  contact start   -->
+  <div class="contact">
+    <div class="pro_tie">
+      <div class="mar_auto clearfix">
+        <h2 class="float_l color_6">联系我们</h2>
+      </div>
+    </div>
+    <div class="mar_auto">
+          <h1 class="img_h1"><img src="images/contact_tie.jpg " /></h1>
+          <div class="two_txt clearfix">
+            <div class="one_t float_l">
+              <h2 class="color_0 font14 line34"><B>yimiji.com.cn</B></h2>
+              <p class="line24 color_3">地址： 广州市黄埔区中新智慧三街10号B5栋301、302、303房</p>
+              <p class="color_c font14 line24">手机： 18195504884</p>
+              <p><B class="color_0 line24">邮箱：  admin@yimiji.com.cn</p>
+			  <p><img src="images/mb_wangid.png"></p>
+			  <p>关注微信公众号</p>
+            </div>
+            <div class="two_t float_l">
+              <h2 class="color_0 font14 line34"><B>关于医觅吉</B></h2>
+              <p class="line24 color_3">                 2024年3月28日新加坡国立大学NUS正式邀请我们团队入驻新国大广州创新研究院，继续研发基于AI全自动化的IMage3D 2.0系统。新加坡国立大学（National University of Singapore），简称“NUS”；2024年QS世界大学排名中，新加坡国立大学位列第8名。<br/>基于医觅吉IMage3D 2.0与 IMageAI研发为主体的“广州市智慧医疗健康创新重点实验室”于2024年3月20日获广州市科学技术局正式批复。
+                </p>
+    
+            </div>
+          </div>
+    </div>
+    <div class="row_line"></div>    
+    <div class="row_two">
+      <a href="http://beian.miit.gov.cn" target="_blank" ><span>备案号</span>：粤ICP备2025388259号</a>&nbsp;&nbsp;<span>CopyRight&nbsp;&copy;医觅吉科技（广州）有限公司</span>
+    </div>
+    </div>
+  </div>
+<!--  footer start   -->
+<script type="text/javascript">
+    $(document).ready(function(){
+		banner();					   
+	});
+</script>
+</body>
+</html>

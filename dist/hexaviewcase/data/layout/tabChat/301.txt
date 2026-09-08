@@ -1,0 +1,8 @@
+<div id="Layout_301" class="totalPage">
+	<div name="barMenu" > </div>
+	<div class="pageContent">
+		<div name="barChatTop" > </div>
+		<div name="friendList"> </div>
+		<div name="barChatBottom" > </div>
+	</div>
+</div>

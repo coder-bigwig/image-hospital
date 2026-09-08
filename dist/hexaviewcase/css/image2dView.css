@@ -1,0 +1,801 @@
+.image2dView {
+  background-color: #2c2c3b;
+}
+
+/*工具栏 -- 按钮*/
+.image2dView .toolDiv {
+  display: flex;
+  height: 50px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-color: #43465B;
+  color: #fff;
+  font-size: 12px;
+}
+.image2dView .wrapImage2DBtns {
+  display: flex;
+  white-space: nowrap;
+}
+.image2dView .toolDiv .image2D_btn,
+.image2dView .toolDiv .image2D_btn2{
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 2px;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  margin-left: 3px;
+  margin-right: 3px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  background-color: #2E2F34;
+}
+.image2dView .toolDiv .report_btn > .bgImg {
+  width: 22px;
+  height: 22px;
+  background: #2E2F34 url(../images/icon/mo_report.png) no-repeat center;
+  background-size: contain;
+}
+.image2dView .toolDiv .turnPage_btn > .bgImg {
+  width: 22px;
+  height: 22px;
+  background: #2E2F34 url(../images/icon/mo_turnPage.png?v=1.1.03) no-repeat center;
+  background-size: contain;
+}
+.image2dView .toolDiv .move_btn > .bgImg{
+  width: 22px;
+  height: 22px;
+  background: #2E2F34 url(../images/icon/mo_move.png?v=1.1.01) no-repeat center;
+  background-size: contain;
+}
+.image2dView .toolDiv .zoom_btn > .bgImg{
+  width: 22px;
+  height: 22px;
+  background: #2E2F34 url(../images/icon/mo_zoom.png?v=1.1.01) no-repeat center;
+  background-size: contain;
+}
+.image2dView .toolDiv .mark_btn > .bgImg{
+  width: 22px;
+  height: 22px;
+  background: #2E2F34 url(../images/icon/mo_screenShotDraw_dark.png?v=1.1.01) no-repeat center;
+  background-size: contain;
+}
+.image2dView .toolDiv .brightness_btn > .bgImg{
+  width: 22px;
+  height: 22px;
+  background: #2E2F34 url(../images/icon/mo_windowLH.png?v=1.1.01) no-repeat center;
+  background-size: contain;
+}
+.image2dView .toolDiv .userInfo_btn > .bgImg{
+  width: 22px;
+  height: 22px;
+  background: #2E2F34 url(../images/icon/mo_userInfo.png?v=1.1.02) no-repeat center;
+  background-size: contain;
+}
+.image2dView .toolDiv .layout_btn > .bgImg{
+  width: 22px;
+  height: 22px;
+  background: #2E2F34 url(../images/icon/mo_layout.png?v=1.1.02) no-repeat center;
+  background-size: contain;
+  
+}
+.image2dView .toolDiv .layout_btn{
+  position: relative;
+}
+.image2dView .toolDiv .backColor_btn > .bgImg{
+  width: 22px;
+  height: 22px;
+  background: #2E2F34 url(../images/icon/mo_backColor.png?v=1.1.05) no-repeat center;
+  background-size: contain;
+  
+}
+.image2dView .toolDiv .backColor_btn{
+  position: relative;
+}
+.image2dView .toolDiv .measure_btn > .bgImg{
+  width: 22px;
+  height: 22px;
+  background: #2E2F34 url(../images/icon/mo_measure.png?v=1.1.02) no-repeat center;
+  background-size: contain;
+}
+.image2dView .toolDiv .wlPresets_btn > .bgImg{
+  width: 22px;
+  height: 22px;
+  background: #2E2F34 url(../images/icon/mo_wlPresets.png?v=1.1.01) no-repeat center;
+  background-size: contain;
+  
+}
+.image2dView .toolDiv .wlPresets_btn{
+  position: relative;
+}
+.image2dView .toolDiv .more_btn > .bgImg{
+  width: 22px;
+  height: 22px;
+  background: #2E2F34 url(../images/icon/mo_more.png?v=1.1.01) no-repeat center;
+  background-size: contain;
+  
+}
+.image2dView .toolDiv .more_btn{
+  position: relative;
+}
+
+/*工具栏按钮的选中与点击效果*/
+.image2dView .toolDiv  .checked {
+  border: 1px solid rgba(12,171,225,1);
+  color: #0DABE1;
+}
+.image2dView .toolDiv  .image2D_btn:active{
+  border: 1px solid rgba(12,171,225,1);
+  color: #0DABE1;
+}
+
+.image2dView .toolDiv .checked.turnPage_btn > .bgImg{
+  background: #2E2F34 url(../images/icon/mo_turnPage_click.png?v=1.1.03) no-repeat center;
+  background-size: contain;
+}
+.image2dView .toolDiv .checked.move_btn > .bgImg{
+  background: #2E2F34 url(../images/icon/mo_move_click.png?v=1.1.01) no-repeat center;
+  background-size: contain;
+}
+.image2dView .toolDiv .checked.zoom_btn > .bgImg{
+  background: #2E2F34 url(../images/icon/mo_zoom_click.png?v=1.1.01) no-repeat center;
+  background-size: contain;
+}
+.image2dView .toolDiv .checked.mark_btn > .bgImg{
+  background: #2E2F34 url(../images/icon/mo_screenShotDraw_dark_click.png?v=1.1.01) no-repeat center;
+  background-size: contain;
+}
+.image2dView .toolDiv .checked.brightness_btn > .bgImg{
+  background: #2E2F34 url(../images/icon/mo_windowLH_click.png?v=1.1.01) no-repeat center;
+  background-size: contain;
+}
+.image2dView .toolDiv .checked.userInfo_btn > .bgImg{
+  background: #2E2F34 url(../images/icon/mo_userInfo_click.png?v=1.1.02) no-repeat center;
+  background-size: contain;
+}
+.image2dView .toolDiv .checked.layout_btn > .bgImg{
+  background: #2E2F34 url(../images/icon/mo_layout_click.png?v=1.1.02) no-repeat center;
+  background-size: contain;
+}
+.image2dView .toolDiv .checked.backColor_btn > .bgImg{
+  background: #2E2F34 url(../images/icon/mo_backColor_click.png?v=1.1.05) no-repeat center;
+  background-size: contain;
+}
+.image2dView .toolDiv .checked.measure_btn > .bgImg{
+  background: #2E2F34 url(../images/icon/mo_measure_click.png?v=1.1.02) no-repeat center;
+  background-size: contain;
+}
+.image2dView .toolDiv .checked.wlPresets_btn > .bgImg{
+  background: #2E2F34 url(../images/icon/mo_wlPresets_click.png?v=1.1.01) no-repeat center;
+  background-size: contain;
+}
+.image2dView .toolDiv .checked.more_btn > .bgImg{
+  background: #2E2F34 url(../images/icon/mo_more_click.png?v=1.1.01) no-repeat center;
+  background-size: contain;
+}
+
+.image2dView .toolDiv .report_btn:active > .bgImg{
+  background: #2E2F34 url(../images/icon/mo_report_click.png) no-repeat center;
+  background-size: contain;
+}
+.image2dView .toolDiv .turnPage_btn:active > .bgImg{
+  background: #2E2F34 url(../images/icon/mo_turnPage_click.png?v=1.1.03) no-repeat center;
+  background-size: contain;
+}
+.image2dView .toolDiv .move_btn:active > .bgImg{
+  background: #2E2F34 url(../images/icon/mo_move_click.png?v=1.1.01) no-repeat center;
+  background-size: contain;
+}
+.image2dView .toolDiv .zoom_btn:active > .bgImg{
+  background: #2E2F34 url(../images/icon/mo_zoom_click.png?v=1.1.01) no-repeat center;
+  background-size: contain;
+}
+.image2dView .toolDiv .mark_btn:active > .bgImg{
+  background: #2E2F34 url(../images/icon/mo_screenShotDraw_dark_click.png?v=1.1.01) no-repeat center;
+  background-size: contain;
+}
+.image2dView .toolDiv .brightness_btn:active > .bgImg{
+  background: #2E2F34 url(../images/icon/mo_windowLH_click.png?v=1.1.01) no-repeat center;
+  background-size: contain;
+}
+.image2dView .toolDiv .userInfo_btn:active > .bgImg{
+  background: #2E2F34 url(../images/icon/mo_userInfo_click.png?v=1.1.02) no-repeat center;
+  background-size: contain;
+}
+.image2dView .toolDiv .layout_btn:active > .bgImg{
+  background: #2E2F34 url(../images/icon/mo_layout_click.png?v=1.1.02) no-repeat center;
+  background-size: contain;
+}
+.image2dView .toolDiv .backColor_btn:active > .bgImg{
+  background: #2E2F34 url(../images/icon/mo_backColor_click.png?v=1.1.05) no-repeat center;
+  background-size: contain;
+}
+.image2dView .toolDiv .measure_btn:active > .bgImg{
+  background: #2E2F34 url(../images/icon/mo_measure_click.png?v=1.1.02) no-repeat center;
+  background-size: contain;
+}
+.image2dView .toolDiv .wlPresets_btn:active > .bgImg{
+  background: #2E2F34 url(../images/icon/mo_wlPresets_click.png?v=1.1.01) no-repeat center;
+  background-size: contain;
+}
+.image2dView .toolDiv .more_btn:active > .bgImg{
+  background: #2E2F34 url(../images/icon/mo_more_click.png?v=1.1.01) no-repeat center;
+  background-size: contain;
+}
+
+/*工具栏的下拉框*/
+.image2dView .toolDiv .image2D_btn .dropDown{
+  background-color: #43465B;
+  color: #fff;
+}
+
+/*窗宽窗位的下拉列表*/
+.image2dView .toolDiv .wlPresets_btn .dropDown{
+  position: absolute;
+  top: calc(100% + 1px);
+  right: 0;
+  z-index: 1;
+  width: max-content;
+  padding: 4px 0;
+}
+.image2dView .toolDiv .wlPresets_btn .dropDown > .item{
+  padding: 8px 12px;
+}
+.image2dView .toolDiv .wlPresets_btn .dropDown > .item:active{
+  background-color: #545454;
+}
+
+/*布局的下拉*/
+.image2dView .toolDiv .layout_btn .dropDown{
+  position: absolute;
+  top: calc(100% + 1px);
+  right: 0;
+  display: flex;
+  z-index: 1;
+  width: max-content;
+  padding: 4px 0;
+}
+.image2dView .toolDiv .layout_btn .dropDown > .item{
+  padding: 5px;
+}
+.image2dView .toolDiv .layout_btn .xulie {
+
+}
+.image2dView .toolDiv .layout_btn .title{
+  text-align: center;
+  margin-bottom: 4px;
+}
+.image2dView .toolDiv .layout_btn .x_content {
+  display: flex;
+  flex-wrap: wrap;
+}
+.image2dView .toolDiv .layout_btn .dropDown .vline{
+  width: 2px;
+  background-color: #ccc;
+}
+.image2dView .toolDiv .layout_btn .layout1x1_btn {
+  background: #2E2F34 url(../images/icon/mo_layout1x1.png?v=1.1.01) no-repeat center;
+  background-size: 26px 26px;
+  margin-left: 0;
+}
+.image2dView .toolDiv .layout_btn .layout2x1_btn {
+  background: #2E2F34 url(../images/icon/mo_layout2x1.png?v=1.1.01) no-repeat center;
+  background-size: 26px 26px;
+}
+.image2dView .toolDiv .layout_btn .layout3x1_btn {
+  background: #2E2F34 url(../images/icon/mo_layout3x1.png?v=1.1.01) no-repeat center;
+  background-size: 26px 26px;
+}
+.image2dView .toolDiv .layout_btn .layout2x2_btn {
+  background: #2E2F34 url(../images/icon/mo_layout2x2.png?v=1.1.01) no-repeat center;
+  background-size: 26px 26px;
+}
+.image2dView .toolDiv .layout_btn .mpr_btn {
+  background: #2E2F34 url(../images/icon/mo_mpr.png?v=1.1.01) no-repeat center;
+  background-size: 26px 26px;
+}
+
+
+/*布局下拉框的按钮的点击与选中效果*/
+.image2dView .toolDiv .layout_btn .checked {
+  border: 1px solid rgba(12,171,225,1);
+  color: #fff;
+}
+.image2dView .toolDiv .layout_btn .image2D_btn2:active {
+  border: 1px solid rgba(12,171,225,1);
+}
+.image2dView .toolDiv .layout_btn .checked.layout1x1_btn {
+  background: #2E2F34 url(../images/icon/mo_layout1x1_click.png?v=1.1.01) no-repeat center;
+  background-size: 26px 26px;
+}
+.image2dView .toolDiv .layout_btn .checked.layout2x1_btn {
+  background: #2E2F34 url(../images/icon/mo_layout2x1_click.png?v=1.1.01) no-repeat center;
+  background-size: 26px 26px;
+}
+.image2dView .toolDiv .layout_btn .checked.layout3x1_btn {
+  background: #2E2F34 url(../images/icon/mo_layout3x1_click.png?v=1.1.01) no-repeat center;
+  background-size: 26px 26px;
+}
+.image2dView .toolDiv .layout_btn .checked.layout2x2_btn {
+  background: #2E2F34 url(../images/icon/mo_layout2x2_click.png?v=1.1.01) no-repeat center;
+  background-size: 26px 26px;
+}
+.image2dView .toolDiv .layout_btn .checked.mpr_btn {
+  background: #2E2F34 url(../images/icon/mo_mpr_click.png?v=1.1.01) no-repeat center;
+  background-size: 26px 26px;
+}
+
+.image2dView .toolDiv .layout_btn .layout1x1_btn:active {
+  background: #2E2F34 url(../images/icon/mo_layout1x1_click.png?v=1.1.01) no-repeat center;
+  background-size: 26px 26px;
+}
+.image2dView .toolDiv .layout_btn .layout2x1_btn:active {
+  background: #2E2F34 url(../images/icon/mo_layout2x1_click.png?v=1.1.01) no-repeat center;
+  background-size: 26px 26px;
+}
+.image2dView .toolDiv .layout_btn .layout3x1_btn:active {
+  background: #2E2F34 url(../images/icon/mo_layout3x1_click.png?v=1.1.01) no-repeat center;
+  background-size: 26px 26px;
+}
+.image2dView .toolDiv .layout_btn .layout2x2_btn:active {
+  background: #2E2F34 url(../images/icon/mo_layout2x2_click.png?v=1.1.01) no-repeat center;
+  background-size: 26px 26px;
+}
+.image2dView .toolDiv .layout_btn .mpr_btn:active {
+  background: #2E2F34 url(../images/icon/mo_mpr_click.png?v=1.1.01) no-repeat center;
+  background-size: 26px 26px;
+}
+
+
+/*反相的下拉列表*/
+.image2dView .toolDiv .backColor_btn .dropDown{
+  position: absolute;
+  top: calc(100% + 1px);
+  right: 0;
+  z-index: 1;
+  width: max-content;
+  padding: 4px 0;
+}
+.image2dView .toolDiv .backColor_btn .dropDown > .item{
+  padding: 8px 12px;
+}
+.image2dView .toolDiv .backColor_btn .dropDown > .item:active{
+  background-color: #545454;
+}
+
+/*更多的下拉列表*/
+.image2dView .toolDiv .more_btn .dropDown{
+  position: absolute;
+  top: calc(100% + 1px);
+  right: 0;
+  z-index: 1;
+  width: max-content;
+  padding: 4px 6px;
+}
+
+
+/*序列区*/
+.image2dView .image2dViewSeries {
+	height: 76px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: #000;
+}
+.image2dView .image2dViewSeries .main{
+  height: 76px;
+  width: 100%;
+  /*position: absolute;
+  top: -4px;
+  left: 0;*/
+  border-radius:6px 6px 0px 0px;
+  display: flex;
+  align-items: center;
+  overflow-x: auto;
+  word-break: break-word;
+  background-color: #2c2c3b;
+}
+.image2dView .image2dViewSeries .main:before{
+  content: "";
+  width: 6px;
+  height: 6px;
+  flex-shrink: 0;
+}
+.image2dView .image2dViewSeries .main:after{
+  content: "";
+  width: 6px;
+  height: 6px;
+  flex-shrink: 0;
+}
+.image2dView .image2dViewSeries .item{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-shrink: 0;
+  border: 1px solid #979797;
+  color: #fff;
+  width: 80px;
+  height: 60px;
+  box-sizing: border-box;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+.image2dView .image2dViewSeries .emptyDiv{
+  width: 6px;
+  height: 6px;
+}
+.image2dView .image2dViewSeries .checked{
+  border: 1px solid #cecece;
+  background-color: #cecece;
+  color: #000;
+  box-sizing: content-box;
+}
+.image2dView .image2dViewSeries .row_one{
+  font-size: 12px;
+  line-height: 16px;
+  height: 32px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.image2dView .image2dViewSeries .row_two{
+  text-align: right;
+  font-size: 10px;
+}
+.image2dView .image2dViewSeries .top{
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 4px 4px 2px 4px;
+}
+.image2dView .image2dViewSeries .bottom{
+  height: 3px;
+  width: 0;
+  background-color: #5CD381;
+  /*display: none;*/
+}
+
+/*图像区*/
+.image2dView .image2dViewScreenShot {
+  background-color: #2c2c3b;
+}
+.image2dView .wrapCanvas {
+  position: relative;
+  font-size: 12px;
+  color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+}
+.image2dView .image2dViewCanvas {
+  background: #000;
+  border: none;
+  vertical-align: middle;
+}
+.image2dView .wrapCanvas .canvas1,
+.image2dView .wrapCanvas .canvas2,
+.image2dView .wrapCanvas .canvas3,
+.image2dView .wrapCanvas .canvas4{
+  position: relative;
+}
+.image2dView .wrapCanvas .left_top_info{
+  position: absolute;
+  left: 6px;
+  top: 6px;
+}
+.image2dView .wrapCanvas .left_bottom_info{
+  position: absolute;
+  left: 6px;
+  bottom: 6px;
+}
+.image2dView .wrapCanvas .right_top_info{
+  position: absolute;
+  right: 6px;
+  top: 6px;
+  text-align: right;
+}
+.image2dView .wrapCanvas .right_bottom_info{
+  position: absolute;
+  right: 6px;
+  bottom: 6px;
+  text-align: right;
+}
+.image2dView .wrapCanvas .image2dViewCanvas {
+  box-sizing: border-box;
+  border: 2px solid #000;
+}
+.image2dView .wrapCanvas .checked{
+  box-sizing: border-box;
+  border: 2px solid #038fbf;
+}
+
+
+
+
+
+/*以下为浅色模式的样式*/ 
+
+/*工具栏默认字体样式*/
+.lightTheme .image2dView .toolDiv {
+	color: #000;
+  background-color: #F2F2F2;
+}
+/*工具栏默认按钮图标*/
+.lightTheme .image2dView .toolDiv .image2D_btn,
+.lightTheme .image2dView .toolDiv .image2D_btn2{
+	background-color: transparent;
+  /*background-color: #ddd;*/
+	border: 1px solid #BDBDBD;
+}
+.lightTheme .image2dView .toolDiv .report_btn > .bgImg {
+  width: 22px;
+  height: 22px;
+  background: transparent url(../images/icon/mo_report_light.png) no-repeat center;
+  background-size: contain;
+}
+.lightTheme .image2dView .toolDiv .turnPage_btn > .bgImg {
+  width: 22px;
+  height: 22px;
+  background: transparent url(../images/icon/mo_turnPage_light.png?v=1.1.03) no-repeat center;
+  background-size: contain;
+}
+.lightTheme .image2dView .toolDiv .move_btn > .bgImg {
+  width: 22px;
+  height: 22px;
+  background: transparent url(../images/icon/mo_move_light.png?v=1.1.01) no-repeat center;
+  background-size: contain;
+}
+.lightTheme .image2dView .toolDiv .zoom_btn > .bgImg {
+  width: 22px;
+  height: 22px;
+  background: transparent url(../images/icon/mo_zoom_light.png?v=1.1.01) no-repeat center;
+  background-size: contain;
+}
+.lightTheme .image2dView .toolDiv .mark_btn > .bgImg {
+  width: 22px;
+  height: 22px;
+  background: transparent url(../images/icon/mo_screenShotDraw_light.png?v=1.1.01) no-repeat center;
+  background-size: contain;
+}
+.lightTheme .image2dView .toolDiv .brightness_btn > .bgImg {
+  width: 22px;
+  height: 22px;
+  background: transparent url(../images/icon/mo_windowLH_light.png?v=1.1.01) no-repeat center;
+  background-size: contain;
+}
+.lightTheme .image2dView .toolDiv .userInfo_btn > .bgImg {
+  width: 22px;
+  height: 22px;
+  background: transparent url(../images/icon/mo_userInfo_light.png?v=1.1.02) no-repeat center;
+  background-size: contain;
+}
+.lightTheme .image2dView .toolDiv .layout_btn > .bgImg {
+  width: 22px;
+  height: 22px;
+  background: transparent url(../images/icon/mo_layout_light.png?v=1.1.02) no-repeat center;
+  background-size: contain;
+  
+}
+.lightTheme .image2dView .toolDiv .layout_btn {
+  position: relative;
+}
+.lightTheme .image2dView .toolDiv .backColor_btn > .bgImg {
+  width: 22px;
+  height: 22px;
+  background: transparent url(../images/icon/mo_backColor_light.png?v=1.1.05) no-repeat center;
+  background-size: contain;
+  
+}
+.lightTheme .image2dView .toolDiv .backColor_btn {
+  position: relative;
+}
+.lightTheme .image2dView .toolDiv .measure_btn > .bgImg {
+  width: 22px;
+  height: 22px;
+  background: transparent url(../images/icon/mo_measure_light.png?v=1.1.02) no-repeat center;
+  background-size: contain;
+}
+.lightTheme .image2dView .toolDiv .wlPresets_btn > .bgImg {
+  width: 22px;
+  height: 22px;
+  background: transparent url(../images/icon/mo_wlPresets_light.png?v=1.1.01) no-repeat center;
+  background-size: contain;
+  
+}
+.lightTheme .image2dView .toolDiv .wlPresets_btn {
+  position: relative;
+}
+.lightTheme .image2dView .toolDiv .more_btn > .bgImg {
+  width: 22px;
+  height: 22px;
+  background: transparent url(../images/icon/mo_more_light.png?v=1.1.01) no-repeat center;
+  background-size: contain;
+  
+}
+.lightTheme .image2dView .toolDiv .more_btn {
+  position: relative;
+}
+
+/*工具栏按钮的选中与点击效果*/
+.lightTheme .image2dView .toolDiv  .checked {
+  border: 1px solid rgba(12,171,225,1);
+}
+.lightTheme .image2dView .toolDiv  .image2D_btn:active{
+  border: 1px solid rgba(12,171,225,1);
+}
+.lightTheme .image2dView .toolDiv .checked.turnPage_btn > .bgImg {
+  background: transparent url(../images/icon/mo_turnPage_click.png?v=1.1.03) no-repeat center;
+  background-size: contain;
+}
+.lightTheme .image2dView .toolDiv .checked.move_btn > .bgImg {
+  background: transparent url(../images/icon/mo_move_click.png?v=1.1.01) no-repeat center;
+  background-size: contain;
+}
+.lightTheme .image2dView .toolDiv .checked.zoom_btn > .bgImg {
+  background: transparent url(../images/icon/mo_zoom_click.png?v=1.1.01) no-repeat center;
+  background-size: contain;
+}
+.lightTheme .image2dView .toolDiv .checked.mark_btn > .bgImg {
+  background: transparent url(../images/icon/mo_screenShotDraw_dark_click.png?v=1.1.01) no-repeat center;
+  background-size: contain;
+}
+.lightTheme .image2dView .toolDiv .checked.brightness_btn > .bgImg {
+  background: transparent url(../images/icon/mo_windowLH_click.png?v=1.1.01) no-repeat center;
+  background-size: contain;
+}
+.lightTheme .image2dView .toolDiv .checked.userInfo_btn > .bgImg {
+  background: transparent url(../images/icon/mo_userInfo_click.png?v=1.1.02) no-repeat center;
+  background-size: contain;
+}
+.lightTheme .image2dView .toolDiv .checked.layout_btn > .bgImg {
+  background: transparent url(../images/icon/mo_layout_click.png?v=1.1.02) no-repeat center;
+  background-size: contain;
+}
+.lightTheme .image2dView .toolDiv .checked.backColor_btn > .bgImg {
+  background: transparent url(../images/icon/mo_backColor_click.png?v=1.1.05) no-repeat center;
+  background-size: contain;
+}
+.lightTheme .image2dView .toolDiv .checked.measure_btn > .bgImg {
+  background: transparent url(../images/icon/mo_measure_click.png?v=1.1.02) no-repeat center;
+  background-size: contain;
+}
+.lightTheme .image2dView .toolDiv .checked.wlPresets_btn > .bgImg {
+  background: transparent url(../images/icon/mo_wlPresets_click.png?v=1.1.01) no-repeat center;
+  background-size: contain;
+}
+.lightTheme .image2dView .toolDiv .checked.more_btn > .bgImg {
+  background: transparent url(../images/icon/mo_more_click.png?v=1.1.01) no-repeat center;
+  background-size: contain;
+}
+
+.lightTheme .image2dView .toolDiv .report_btn:active > .bgImg {
+  background: transparent url(../images/icon/mo_report_click.png) no-repeat center;
+  background-size: contain;
+}
+.lightTheme .image2dView .toolDiv .turnPage_btn:active > .bgImg {
+  background: transparent url(../images/icon/mo_turnPage_click.png?v=1.1.03) no-repeat center;
+  background-size: contain;
+}
+.lightTheme .image2dView .toolDiv .move_btn:active > .bgImg {
+  background: transparent url(../images/icon/mo_move_click.png?v=1.1.01) no-repeat center;
+  background-size: contain;
+}
+.lightTheme .image2dView .toolDiv .zoom_btn:active > .bgImg {
+  background: transparent url(../images/icon/mo_zoom_click.png?v=1.1.01) no-repeat center;
+  background-size: contain;
+}
+.lightTheme .image2dView .toolDiv .mark_btn:active > .bgImg {
+  background: transparent url(../images/icon/mo_screenShotDraw_dark_click.png?v=1.1.01) no-repeat center;
+  background-size: contain;
+}
+.lightTheme .image2dView .toolDiv .brightness_btn:active > .bgImg {
+  background: transparent url(../images/icon/mo_windowLH_click.png?v=1.1.01) no-repeat center;
+  background-size: contain;
+}
+.lightTheme .image2dView .toolDiv .userInfo_btn:active > .bgImg {
+  background: transparent url(../images/icon/mo_userInfo_click.png?v=1.1.02) no-repeat center;
+  background-size: contain;
+}
+.lightTheme .image2dView .toolDiv .layout_btn:active > .bgImg {
+  background: transparent url(../images/icon/mo_layout_click.png?v=1.1.02) no-repeat center;
+  background-size: contain;
+}
+.lightTheme .image2dView .toolDiv .backColor_btn:active > .bgImg {
+  background: transparent url(../images/icon/mo_backColor_click.png?v=1.1.05) no-repeat center;
+  background-size: contain;
+}
+.lightTheme .image2dView .toolDiv .measure_btn:active > .bgImg {
+  background: transparent url(../images/icon/mo_measure_click.png?v=1.1.02) no-repeat center;
+  background-size: contain;
+}
+.lightTheme .image2dView .toolDiv .wlPresets_btn:active > .bgImg {
+  background: transparent url(../images/icon/mo_wlPresets_click.png?v=1.1.01) no-repeat center;
+  background-size: contain;
+}
+.lightTheme .image2dView .toolDiv .more_btn:active > .bgImg {
+  background: transparent url(../images/icon/mo_more_click.png?v=1.1.01) no-repeat center;
+  background-size: contain;
+}
+
+/*布局的下拉*/
+.lightTheme .image2dView .toolDiv .layout_btn .dropDown .vline{
+  background-color: #000;
+}
+.lightTheme .image2dView .toolDiv .layout_btn .layout1x1_btn {
+  background: transparent url(../images/icon/mo_layout1x1_light.png?v=1.1.01) no-repeat center;
+  background-size: 26px 26px;
+  margin-left: 0;
+}
+.lightTheme .image2dView .toolDiv .layout_btn .layout2x1_btn {
+  background: transparent url(../images/icon/mo_layout2x1_light.png?v=1.1.01) no-repeat center;
+  background-size: 26px 26px;
+}
+.lightTheme .image2dView .toolDiv .layout_btn .layout3x1_btn {
+  background: transparent url(../images/icon/mo_layout3x1_light.png?v=1.1.01) no-repeat center;
+  background-size: 26px 26px;
+}
+.lightTheme .image2dView .toolDiv .layout_btn .layout2x2_btn {
+  background: transparent url(../images/icon/mo_layout2x2_light.png?v=1.1.01) no-repeat center;
+  background-size: 26px 26px;
+}
+.lightTheme .image2dView .toolDiv .layout_btn .mpr_btn {
+  background: transparent url(../images/icon/mo_mpr_light.png?v=1.1.01) no-repeat center;
+  background-size: 26px 26px;
+}
+/*布局下拉框的按钮的点击与选中效果*/
+.lightTheme .image2dView .toolDiv .layout_btn .checked {
+  /*color: #000;*/
+}
+
+.lightTheme .image2dView .toolDiv .layout_btn .checked.layout1x1_btn {
+  background: transparent url(../images/icon/mo_layout1x1_click.png?v=1.1.01) no-repeat center;
+  background-size: 26px 26px;
+}
+.lightTheme .image2dView .toolDiv .layout_btn .checked.layout2x1_btn {
+  background: transparent url(../images/icon/mo_layout2x1_click.png?v=1.1.01) no-repeat center;
+  background-size: 26px 26px;
+}
+.lightTheme .image2dView .toolDiv .layout_btn .checked.layout3x1_btn {
+  background: transparent url(../images/icon/mo_layout3x1_click.png?v=1.1.01) no-repeat center;
+  background-size: 26px 26px;
+}
+.lightTheme .image2dView .toolDiv .layout_btn .checked.layout2x2_btn {
+  background: transparent url(../images/icon/mo_layout2x2_click.png?v=1.1.01) no-repeat center;
+  background-size: 26px 26px;
+}
+.lightTheme .image2dView .toolDiv .layout_btn .checked.mpr_btn {
+  background: transparent url(../images/icon/mo_mpr_click.png?v=1.1.01) no-repeat center;
+  background-size: 26px 26px;
+}
+
+.lightTheme .image2dView .toolDiv .layout_btn .layout1x1_btn:active {
+  background: transparent url(../images/icon/mo_layout1x1_click.png?v=1.1.01) no-repeat center;
+  background-size: 26px 26px;
+}
+.lightTheme .image2dView .toolDiv .layout_btn .layout2x1_btn:active {
+  background: transparent url(../images/icon/mo_layout2x1_click.png?v=1.1.01) no-repeat center;
+  background-size: 26px 26px;
+}
+.lightTheme .image2dView .toolDiv .layout_btn .layout3x1_btn:active {
+  background: transparent url(../images/icon/mo_layout3x1_click.png?v=1.1.01) no-repeat center;
+  background-size: 26px 26px;
+}
+.lightTheme .image2dView .toolDiv .layout_btn .layout2x2_btn:active {
+  background: transparent url(../images/icon/mo_layout2x2_click.png?v=1.1.01) no-repeat center;
+  background-size: 26px 26px;
+}
+.lightTheme .image2dView .toolDiv .layout_btn .mpr_btn:active {
+  background: transparent url(../images/icon/mo_mpr_click.png?v=1.1.01) no-repeat center;
+  background-size: 26px 26px;
+}
+/*工具栏的下拉框*/
+.lightTheme .image2dView .toolDiv .image2D_btn .dropDown{
+  background-color: #F2F2F2;
+  color: #000;
+}

@@ -1,0 +1,11 @@
+<div id="Layout_209" class="totalPage">   <!--show 3D model + vesLabel Color table-->
+	<div name="barMenu" > </div>
+	<div name="barImage" > </div>
+	<div id="imgContent" class="imgContent">
+		<div name="view3D" > </div> 
+		<div class="relative" >
+			<div id="VesLabelColorTree" class="vesLabelColorTree" ></div> 
+			<div id="VesLabelColorList" class="vesLabelColorList" ></div> 
+		</div> 
+	</div>
+</div>

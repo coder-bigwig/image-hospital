@@ -1,0 +1,44 @@
+{
+  "name": "mediview-mobile-demo",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "npm run build && npm run start",
+    "dev:server": "tsx watch server/index.ts",
+    "dev:client": "vite --host 0.0.0.0",
+    "build": "tsc --noEmit && vite build",
+    "start": "tsx server/index.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "seed": "tsx server/seed.ts"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "latest",
+    "cors": "latest",
+    "express": "latest",
+    "multer": "latest",
+    "qrcode.react": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "three": "latest",
+    "supertest": "latest"
+  },
+  "devDependencies": {
+    "@types/cors": "latest",
+    "@types/express": "latest",
+    "@types/multer": "latest",
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "@types/three": "latest",
+    "@types/supertest": "latest",
+    "@vitejs/plugin-react": "latest",
+    "concurrently": "latest",
+    "jsdom": "latest",
+    "tsx": "latest",
+    "typescript": "latest",
+    "vite": "latest",
+    "vitest": "latest"
+  }
+}

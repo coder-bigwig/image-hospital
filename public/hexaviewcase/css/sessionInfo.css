@@ -1,0 +1,283 @@
+/*群信息*/
+.sessionInfo {
+    background-color: #EDEDED;
+    overflow-y: auto;
+}
+.sessionInfo .text {
+    display: inline-block;
+    width: calc(100% - 30px);
+    vertical-align: middle;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.sessionInfo img {
+    vertical-align: middle;
+}
+.sessionInfo .rightArrow {
+    width: 26px;
+    pointer-events: none;
+}
+.sessionInfo .textAndRightArrow {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+/*群成员*/
+.sessionInfo .groupMember {
+    background-color: #fff;
+    word-break: break-word;
+    margin-bottom: 10px;
+    font-size: 0px;
+    padding-top: 13px;
+}
+.sessionInfo .addMemberIcon {
+    width: 50px;
+    border: 1px solid #d2d2d2;
+    border-radius: 50%;
+    box-sizing: border-box;
+}
+.sessionInfo .deleteMemberIcon {
+    width: 50px;
+    border: 1px solid #d2d2d2;
+    border-radius: 50%;
+    box-sizing: border-box;
+}
+.sessionInfo .sessionInfoMember {
+    width: 350px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+.sessionInfo .sessionInfoUser {
+    display: inline-block;
+    margin: 10px;
+    width: 50px;
+    text-align: center;
+    padding-bottom: 12px;
+}
+.sessionInfo .sessionInfoUser .text{
+    font-size: 12px;
+    width: 100%;
+}
+.sessionInfo .sessionInfoUser .headIcon {
+    width: 100%;
+    vertical-align: middle;
+    border-radius: 50%;
+    pointer-events: none;
+    box-sizing: border-box;
+}
+
+.sessionInfo .headImgFrame {
+    position: relative;
+    display: inline-block;
+}
+.sessionInfo .certificateIcon {
+    position: absolute;
+    height: 18px;
+    right: 0px;
+    bottom: 0px;
+    pointer-events: none;
+}
+
+/*圈头像，圈名称*/
+.wrapSessionInfoTitle {
+    background-color: #fff;
+    margin-bottom: 10px;
+}
+
+.sessionInfoTitle {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+.sessionInfoTitle tr {
+    border-bottom: 0.5px solid #ededed;
+    height: 40px;
+}
+.sessionInfoTitle tr:active {
+    background-color: #D8D8D8;
+}
+.sessionInfoTitle tr td:nth-of-type(2) {
+    text-align: right;
+    padding-right: 5px;
+}
+.sessionInfoTitle tr td:nth-of-type(1) {
+    /*width: 55px;*/
+    padding-left: 15px;
+}
+
+
+.sessionInfoTitle .wrapModifyGroupIcon {
+    display: inline-block;
+    position: relative;
+    padding: 5px 0px 5px 5px;
+}
+.sessionInfoTitle .sessionInfoIcon {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    pointer-events: none;
+}
+.sessionInfoTitle .sessionIconInput {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/*设置群会话*/
+.wrapSettingGroupSession {
+    background-color: #fff;
+    margin-bottom: 10px;
+}
+.settingGroupSession {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+.settingGroupSession tr {
+    border-bottom: 0.5px solid #ededed;
+    height: 40px;
+}
+.settingGroupSession tr td:nth-of-type(1) {
+    padding-left: 15px;
+}
+.settingGroupSession tr td:nth-of-type(2) {
+    width: 80px;
+    text-align: right;
+    padding-right: 14px;
+}
+
+
+/*群昵称*/
+.wrapGroupNicknames {
+    background-color: #fff;
+    margin-bottom: 10px;
+}
+.GroupNicknames {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+.GroupNicknames .modifySessionNicknameBtn:active {
+    background-color: #D8D8D8;
+}
+.GroupNicknames tr {
+    border-bottom: 0.5px solid #ededed;
+    height: 40px;
+}
+.GroupNicknames tr td:nth-of-type(2) {
+    text-align: right;
+    padding-right: 5px;
+}
+.GroupNicknames tr td:nth-of-type(1) {
+    width: 220px;
+    padding-left: 15px;
+}
+.GroupNicknames tr:nth-of-type(2) td:nth-of-type(2) {
+    text-align: right;
+    padding-right: 14px;
+}
+
+/*清空聊天记录*/
+.wrapEmptyGroupChat {
+    background-color: #fff;
+    margin-bottom: 10px;
+}
+.emptyGroupChat {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+.emptyGroupChat tr {
+    border-bottom: 0.5px solid #ededed;
+    height: 40px;
+}
+.emptyGroupChat tr:active {
+    background-color: #D8D8D8;
+}
+.emptyGroupChat tr td:nth-of-type(2) {
+    text-align: right;
+    padding-right: 5px;
+}
+.emptyGroupChat tr td:nth-of-type(1) {
+    padding-left: 15px;
+}
+
+.exitChatBtn {
+    background-color: #fff;
+    margin-bottom: 10px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: red;
+    font-weight: bold;
+    
+}
+.exitChatBtn:active {
+    background-color: #D8D8D8;
+}
+
+.deleteChatBtn {
+    background-color: #fff;
+    margin-bottom: 10px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: red;
+    font-weight: bold;
+}
+.deleteChatBtn:active {
+    background-color: #D8D8D8;
+}
+
+/*开关按钮*/
+.chooseBtn {
+    display: none;
+}
+.choose-label {
+    box-shadow: #ccc 0px 0px 0px 1px;
+    width: 44px;
+    height: 24px;
+    display: inline-block;
+    border-radius: 20px;
+    position: relative;
+    background-color: #EDEDED;
+    overflow: hidden;
+}
+.choose-label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    border-radius: 20px;
+    background-color: #fff;
+    /*z-index: 1;*/
+    -webkit-transition: all 0.1s;
+    transition: all 0.1s;
+}
+.chooseBtn:checked + label.choose-label:before {
+    left: 20px;
+}
+.chooseBtn:checked + label.choose-label {
+    background-color: #3bb3c2;
+}
+.chooseBtn2:checked + label.choose-label:before {
+    left: 20px;
+}
+.chooseBtn2:checked + label.choose-label {
+    background-color: #3bb3c2;
+}
+.chooseBtn3:checked + label.choose-label:before {
+    left: 20px;
+}
+.chooseBtn3:checked + label.choose-label {
+    background-color: #3bb3c2;
+}

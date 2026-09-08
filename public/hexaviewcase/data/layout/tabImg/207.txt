@@ -1,0 +1,8 @@
+<div id="Layout_207" class="totalPage">   <!--show 2D image coronal + object tree-->
+	<div name="barMenu" > </div>
+	<div name="barImage" > </div>
+	<div id="imgContent" class="imgContent">
+		<div name="coronalViewCon" > </div>
+		<div name="volumeTree"> </div>
+	</div>
+</div>

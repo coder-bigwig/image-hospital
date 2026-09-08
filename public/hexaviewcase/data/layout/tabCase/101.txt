@@ -1,0 +1,5 @@
+<div id="Layout_101" class="totalPage">  <!--show case list -->
+	<div name="barMenu" > </div>
+	<div name="barCaseList" > </div>
+	<div name="caseList"> </div>
+</div>

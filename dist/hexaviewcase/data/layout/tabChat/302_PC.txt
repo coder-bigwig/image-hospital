@@ -1,0 +1,4 @@
+<div id="Layout_302" class="totalPage">   <!--show chat box and its tools -->
+    <div name="barChatTop" > </div>
+    <div name="myChat" > </div>  
+</div>

@@ -1,0 +1,4 @@
+<div id="Layout_500" class="totalPage">  
+	<div name="barMenu" > </div>
+	<div name="image2dView"> </div>
+</div>

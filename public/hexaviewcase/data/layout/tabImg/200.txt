@@ -1,0 +1,7 @@
+<div id="Layout_200" class="totalPage">  <!--show 3D model -->
+	<div name="barMenu" > </div>
+	<div name="barImage" > </div>
+	<div id="imgContent" class="imgContent">
+		<div name="view3D"> </div> 
+	</div>
+</div> 

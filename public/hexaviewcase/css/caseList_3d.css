@@ -1,0 +1,257 @@
+.case_3d{
+  background-color: #E8E8E8;
+  font-size: 12px;
+  word-break: break-word;
+}
+.case_3d .case_container{
+  height: calc(100% - 40px);
+  box-sizing: border-box;
+  background-color: #E5E5EA;
+}
+.case_3d .case_container .case_white_padding{
+  height: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  box-sizing: border-box;
+  
+}
+.case_3d .case_3d_head{
+  color: #000;
+  height: 100%;
+  overflow: auto;
+  background-color: #EEEEEE;
+}
+.case_3d .noScrolling {
+  overflow-y: hidden;
+}
+.case_3d .caseListDataTable{
+  /*height: 100%;*/
+}
+.case_3d .case_3d_head .emptyDiv{
+  padding: 3px 10px;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  background-color: #f6f6f6;
+  align-items: center;
+  justify-content: center;
+}
+
+.case_3d .case_item{
+  margin-top: 10px;
+  padding-bottom: 6px;
+  color: #8e8e93;
+  background-color: rgba(255,255,255,0.8);
+}
+.case_3d .case_item:first-child{
+  margin-top: 0;
+
+}
+.case_3d > .case_item .hos{
+  
+}
+.case_3d .case_item .hos_log{
+  width: 23px;
+  height: 23px;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+.case_3d .case_item .case_head{
+  max-width: 350px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  padding-top: 3px;
+  padding-bottom: 4px;
+  justify-content: space-between;
+}
+.case_3d .case_item .case_head .hospitalName{
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.case_3d .case_item .case_head .hospitalName > span{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.case_3d .case_item .case_head .shares{
+  margin-left: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.case_3d .case_item .case_date{
+  flex-shrink: 0;
+  margin-left: 10px;
+}
+.case_3d .case_item .case_head .collect_icon {
+  width: 26px;
+}
+.case_3d .case_item .case_head button {
+  background-color: transparent;
+  outline: none;
+}
+
+.case_3d .case_item .case_main{
+  min-width: 324px;
+  max-width: 768px;
+  width: 94%;
+  /*min-height: 62px;*/
+  margin: 0 auto;
+  border-radius: 8px;
+  border: 1px solid #f2f2f2;
+  padding-left: 5px;
+  padding-right: 5px;
+  box-sizing: border-box;
+  background-color: #FFF;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+  /*position: relative;
+  z-index: 1;*/
+}
+.case_3d .case_item .selected {
+  border: 1px solid #16B6FF;
+}
+
+.case_3d .case_main .top{
+  padding-top: 3px;
+  padding-bottom: 4px;
+  display: flex;
+  align-items: center;
+
+}
+
+.case_3d .case_main .top>span{
+  width: 33%;
+  padding-left: 5px;
+  padding-right: 5px;
+  box-sizing: border-box;
+  text-align: center;
+
+}
+.case_3d .case_main .top>span:first-child{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  
+}
+.case_3d .case_main .top>span:nth-child(2){
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  
+}
+.case_3d .case_main .top>span:nth-child(3){
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+}
+.case_3d .case_main .slash {
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.case_3d .case_main .bottom{
+  display: flex;
+  align-items: center;
+  margin-top: 6px;
+  padding-bottom: 8px;
+  color: #717171;
+  justify-content: space-around;
+}
+.case_3d .case_main .bottom > div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 70px;
+  height: 28px;
+  box-sizing: border-box;
+  
+  border-radius: 4px;
+  box-shadow: 0px 4px 6px 2px rgb(0,0,0,0.05);
+  
+}
+.case_3d .case_main .bottom .case_btn:active {
+  background-color: #D8D8D8;
+}
+.case_3d .case_main .bottom .case_btn{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+}
+.case_3d .case_main .bottom .case_btn > img{
+  margin-right: 2px;
+  width: 15px;
+  height: 15px;
+}
+
+.case_3d .case_item .note {
+  min-width: 324px;
+  max-width: 768px;
+  width: 94%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 7px 10px 7px 10px;
+  box-sizing: border-box;
+  background-color: #F2F2F2;
+  border-radius: 0px 0px 8px 8px;
+  font-weight: bold;
+  color: #000;
+  /*position: relative;
+  top: -8px;
+  margin-bottom: -8px;*/
+}
+
+
+.case_3d .case_3d_foot{
+  height: 40px;
+  background-color: #fff;
+}
+.case_3d .case_3d_foot .foot_content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 324px;
+  max-width: 568px;
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.case_3d .case_3d_foot .foot_content .nextPage{
+
+    background-color: #038fbf;
+    color: #fff;
+    padding: 2px 5px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.case_3d .case_3d_foot .foot_content .nextPage:active{
+  background-color: #058296;
+}
+.case_3d .case_3d_foot .foot_content .prePage {
+  background-color: #038fbf;
+    color: #fff;
+    padding: 2px 5px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.case_3d .case_3d_foot .foot_content .prePage:active{
+  background-color: #058296;
+}
+.case_3d .case_3d_foot .totalItems {
+  
+}
+.case_3d .case_3d_foot .prePage{
+  
+  
+}
